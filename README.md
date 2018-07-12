@@ -1,8 +1,14 @@
 # base-util
 
-## A set of helper classes for working with strings, objects, etc.
+A set of helper classes for working with strings, objects, etc.
 
-## API
+## Installation
+
+```javascript static
+npm i @terrestris/base-util
+```
+
+## API Documentation
 
 ### CsrfUtil
 
