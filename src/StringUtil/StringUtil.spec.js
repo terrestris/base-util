@@ -1,9 +1,6 @@
 /*eslint-env jest*/
 
-
-import {
-  StringUtil
-} from '../index';
+import StringUtil from './StringUtil';
 
 describe('StringUtil', () => {
 

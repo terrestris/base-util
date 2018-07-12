@@ -1,8 +1,6 @@
 /*eslint-env jest*/
 
-import {
-  ObjectUtil,
-} from '../index';
+import ObjectUtil from './ObjectUtil';
 
 describe('ObjectUtil', () => {
   it('is defined', () => {
