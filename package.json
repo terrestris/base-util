@@ -1,0 +1,48 @@
+{
+  "name": "@terrestris/base-util",
+  "version": "0.0.1",
+  "description": "A set of helper classes for working with strings, object, etc.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --maxWorkers=4",
+    "test:watch": "jest --watchAll",
+    "coveralls": "cat coverage/lcov.info | coveralls",
+    "release": "np --no-yarn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrestris/base-util.git"
+  },
+  "author": "terrestris GmbH & Co. KG <info@terrestris.de>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/terrestris/base-util/issues"
+  },
+  "homepage": "https://github.com/terrestris/base-util#readme",
+  "dependencies": {
+    "lodash": "4.17.10",
+    "loglevel": "1.6.1",
+    "query-string": "5.1.1",
+    "url-parse": "1.4.1",
+    "validator": "10.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-eslint": "8.2.5",
+    "babel-jest": "23.0.1",
+    "babel-loader": "7.1.5",
+    "babel-plugin-dynamic-import-node": "2.0.0",
+    "babel-plugin-import": "1.8.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "babel-plugin-transform-import-extension-jsx-to-js": "0.1.0",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "coveralls": "3.0.2",
+    "jest": "23.4.0",
+    "np": "3.0.4",
+    "whatwg-fetch": "2.0.4"
+  }
+}
