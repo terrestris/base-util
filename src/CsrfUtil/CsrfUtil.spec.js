@@ -1,11 +1,9 @@
 /*eslint-env jest*/
 
-import template from 'lodash/template.js';
+import template from 'lodash/template';
 
-import {
-  CsrfUtil,
-  Logger
-} from '../index';
+import CsrfUtil from './CsrfUtil';
+import Logger from '../Logger';
 
 const tokenValue = 'my-csrf-token-value';
 const headerName = 'my-csrf-header-name';

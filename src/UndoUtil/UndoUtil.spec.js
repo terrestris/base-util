@@ -1,9 +1,7 @@
 /*eslint-env jest*/
 
 
-import {
-  UndoUtil
-} from '../index';
+import UndoUtil from './UndoUtil';
 
 describe('UndoUtil', () => {
 

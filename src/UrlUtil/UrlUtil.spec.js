@@ -2,9 +2,7 @@
 
 import URL from 'url-parse';
 
-import {
-  UrlUtil
-} from '../index';
+import UrlUtil from './UrlUtil';
 
 describe('UrlUtil', () => {
 

@@ -1,8 +1,6 @@
 /*eslint-env jest*/
 
-import {
-  MathUtil,
-} from '../index';
+import MathUtil from './MathUtil';
 
 describe('MathUtil', () => {
 
