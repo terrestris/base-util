@@ -1,5 +1,7 @@
 # base-util
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/terrestris/base-util.svg)](https://greenkeeper.io/)
+
 A set of helper classes for working with strings, objects, etc.
 
 ## Installation
