@@ -1,6 +1,7 @@
 # base-util
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/terrestris/base-util.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/terrestris/base-util.svg?branch=master)](https://travis-ci.org/terrestris/base-util)
 
 A set of helper classes for working with strings, objects, etc.
 
