@@ -2,6 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/terrestris/base-util.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/terrestris/base-util.svg?branch=master)](https://travis-ci.org/terrestris/base-util)
+[![Coverage Status](https://coveralls.io/repos/github/terrestris/base-util/badge.svg?branch=master)](https://coveralls.io/github/terrestris/base-util?branch=master)
 
 A set of helper classes for working with strings, objects, etc.
 
