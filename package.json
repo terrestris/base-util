@@ -24,7 +24,7 @@
     "loglevel": "1.6.1",
     "query-string": "6.1.0",
     "url-parse": "1.4.3",
-    "validator": "10.5.0"
+    "validator": "10.6.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
