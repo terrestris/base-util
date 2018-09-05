@@ -2,11 +2,19 @@
   "name": "@terrestris/base-util",
   "version": "0.1.1",
   "description": "A set of helper classes for working with strings, objects, etc.",
-  "main": "src/index.js",
+  "module": "src/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
+    "clean:dist": "rimraf ./dist/*",
     "test": "jest --maxWorkers=4",
     "test:watch": "jest --watchAll",
     "coveralls": "cat coverage/lcov.info | coveralls",
+    "prepublishOnly": "npm run build:dist",
+    "build:dist": "npm run clean:dist && babel src --out-dir dist --copy-files --ignore spec.js",
     "release": "np --no-yarn"
   },
   "repository": {
