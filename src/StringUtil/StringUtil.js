@@ -6,8 +6,8 @@ class StringUtil {
   /**
    * Replaces any occurence of a link-like text with <a> tag.
    *
-   * @param {String} text The string context to replace.
-   * @return {String} The urlified string.
+   * @param {string} text The string context to replace.
+   * @return {string} The urlified string.
    */
   static urlify(text) {
     let urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -19,7 +19,7 @@ class StringUtil {
    * This coerces the value of a string by casting it to the most plausible
    * datatype, guessed by the value itself.
    *
-   * @param {String} string The input string to coerce.
+   * @param {string} string The input string to coerce.
    * @return {*} The coerced value.
    */
   static coerce(string) {
@@ -55,10 +55,10 @@ class StringUtil {
    *
    * See https://stackoverflow.com/questions/14484787/wrap-text-in-javascript
    *
-   * @param {String} str The string to wrap.
-   * @param {Number} width The width of a line (number of characters).
-   * @param {String} spaceReplacer The string to replace spaces with.
-   * @return {String} The 'wrapped' string.
+   * @param {string} str The string to wrap.
+   * @param {number} width The width of a line (number of characters).
+   * @param {string} spaceReplacer The string to replace spaces with.
+   * @return {string} The 'wrapped' string.
    */
   static stringDivider(str, width, spaceReplacer) {
 

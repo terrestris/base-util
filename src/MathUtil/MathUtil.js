@@ -5,14 +5,26 @@
  */
 class MathUtil {
 
-  // convert radians to degrees
-  static radToDeg = (rad) => rad * 360 / (Math.PI * 2);
+  /**
+   * Converts radians to degrees.
+   *
+   * @param {number} rad The radian value to convert.
+   */
+  static radToDeg = rad => rad * 360 / (Math.PI * 2);
 
-  // convert degrees to radians
-  static degToRad = (deg) => deg * Math.PI * 2 / 360;
+  /**
+   * Converts degrees to radians.
+   *
+   * @param {number} deg The degree value to convert.
+   */
+  static degToRad = deg => deg * Math.PI * 2 / 360;
 
-  // modulo for negative values
-  static mod = (n) => ((n % (2 * Math.PI)) + (2 * Math.PI)) % (2 * Math.PI);
+  /**
+   * Returns the modulo for (negative) values.
+   *
+   * @param {number} n The number.
+   */
+  static mod = n => ((n % (2 * Math.PI)) + (2 * Math.PI)) % (2 * Math.PI);
 
 }
 

@@ -32,9 +32,9 @@ class ObjectUtil {
    * Note: It will return the first available match!
    *
    * @param {Object} obj The object to obtain the path from.
-   * @param {String} key The key to look for.
-   * @param {String|Number|Boolean} value The value to look for.
-   * @param {String} [currentPath=''] The currentPath (if called in a recursion)
+   * @param {string} key The key to look for.
+   * @param {string|number|boolean} value The value to look for.
+   * @param {string} [currentPath=''] The currentPath (if called in a recursion)
    *                                  or the custom root path (default is to '').
    */
   static getPathByKeyValue(obj, key, value, currentPath = '') {
@@ -63,7 +63,7 @@ class ObjectUtil {
    *   * Backslash ("/") separated value: Find the last (!) matching key
    *     in the provided object.
    *
-   * @param {String} queryKey The key to be searched.
+   * @param {string} queryKey The key to be searched.
    * @param {Object} queryObject The object to be searched on
    *
    * @return {*} The target value or `undefined` if the given couldn't be

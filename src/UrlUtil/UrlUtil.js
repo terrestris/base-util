@@ -13,7 +13,7 @@ export class UrlUtil {
   /**
    * Returns an object representation of an URL.
    *
-   * @param {String} url The URL to read in.
+   * @param {string} url The URL to read in.
    * @return {URL} The parsed URL object.
    */
   static read(url) {
@@ -24,7 +24,7 @@ export class UrlUtil {
    * Returns a string representation of an URL object.
    *
    * @param {URL} urlObj The URL object to write out.
-   * @return {String} The stringified URL.
+   * @return {string} The stringified URL.
    */
   static write(urlObj) {
     return urlObj.toString();
@@ -33,8 +33,8 @@ export class UrlUtil {
   /**
    * Returns the base path of an URL.
    *
-   * @param {String} url The URL to obtain the base path from.
-   * @return {String} The base path.
+   * @param {string} url The URL to obtain the base path from.
+   * @return {string} The base path.
    */
   static getBasePath(url) {
     let urlObj = UrlUtil.read(url);
@@ -45,7 +45,7 @@ export class UrlUtil {
   /**
    * Returns the query params of a given URL as object.
    *
-   * @param {String} url The URL to get the query params from.
+   * @param {string} url The URL to get the query params from.
    * @return {Object} The query params of the given URL.
    */
   static getQueryParams(url) {
@@ -58,9 +58,9 @@ export class UrlUtil {
    * Returns the value of the given query param of the provided URL. If not
    * found, undefined will be returned.
    *
-   * @param {String} url The URL to get the query params from.
-   * @param {String} key The key to get the value from.
-   * @return {String} The query param value.
+   * @param {string} url The URL to get the query params from.
+   * @param {string} key The key to get the value from.
+   * @return {string} The query param value.
    */
   static getQueryParam(url, key) {
     const queryParamsObj = UrlUtil.getQueryParams(url);
@@ -104,9 +104,9 @@ export class UrlUtil {
   /**
    * Checks if a given URL has the provided query parameter present.
    *
-   * @param {String} url The URL to check.
-   * @param {String} key The query parameter to check.
-   * @return {Boolean} Whether the parameter is present or not.
+   * @param {string} url The URL to check.
+   * @param {string} key The query parameter to check.
+   * @return {boolean} Whether the parameter is present or not.
    */
   static hasQueryParam(url, key) {
     const queryParamsObj = UrlUtil.getQueryParams(url);
@@ -118,10 +118,10 @@ export class UrlUtil {
    * Creates a valid GetCapabilitiesRequest out of the given URL by checking if
    * SERVICE, REQUEST and VERSION are set.
    *
-   * @param {String} url The URL to validate.
-   * @param {String} service The service to set. Default is to 'WMS'.
-   * @param {String} version The version to set. Default is to '1.3.0'.
-   * @return {String} The validated URL.
+   * @param {string} url The URL to validate.
+   * @param {string} service The service to set. Default is to 'WMS'.
+   * @param {string} version The version to set. Default is to '1.3.0'.
+   * @return {string} The validated URL.
    */
   static createValidGetCapabilitiesRequest(url, service = 'WMS', version = '1.3.0') {
     const baseUrl = UrlUtil.getBasePath(url);
@@ -154,7 +154,7 @@ export class UrlUtil {
    * https://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Shinji,Kagawa
    *
    * @param {Array} featureInfoUrls An array of requests to bundle.
-   * @param {Boolean} stringify Whether to stringify the output or not. If set
+   * @param {boolean} stringify Whether to stringify the output or not. If set
    *                            to false an object keyed by the base URL and
    *                            valued by the combined requests params will be
    *                            returned.
@@ -199,7 +199,7 @@ export class UrlUtil {
    *
    * @param {Object} object An object containing kvp for the request.
    *                        e.g. {height:400, width:200}
-   * @return {String} The kvps as a requestString. e.g. 'height=400&width=200'
+   * @return {string} The kvps as a requestString. e.g. 'height=400&width=200'
    */
   static objectToRequestString(object) {
     const requestString = Object.keys(object).map(function(key) {
@@ -213,9 +213,9 @@ export class UrlUtil {
    * Checks if a given URL is valid. Implementation based on
    * https://www.npmjs.com/package/validator.
    *
-   * @param {String} url The URL to validate.
+   * @param {string} url The URL to validate.
    * @param {Object} opts The validation `validator` options.
-   * @return {Boolean} Whether the URL is valid or not.
+   * @return {boolean} Whether the URL is valid or not.
    */
   static isValid(url, opts = {
     protocols: [
