@@ -7,11 +7,11 @@ import UrlUtil from './UrlUtil/UrlUtil';
 import Logger from './Logger';
 
 export {
-    CsrfUtil,
-    MathUtil,
-    ObjectUtil,
-    StringUtil,
-    UndoUtil,
-    UrlUtil,
-    Logger
+  CsrfUtil,
+  MathUtil,
+  ObjectUtil,
+  StringUtil,
+  UndoUtil,
+  UrlUtil,
+  Logger
 };
