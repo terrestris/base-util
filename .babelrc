@@ -7,8 +7,7 @@
     "production": {
       "presets": [
         "env",
-        "stage-0",
-        "minify"
+        "stage-0"
       ]
     }
   }
