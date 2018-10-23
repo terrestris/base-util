@@ -53,9 +53,9 @@
     "documentation": "8.1.2",
     "eslint": "5.7.0",
     "gh-pages": "2.0.1",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "np": "3.0.4",
     "rimraf": "2.6.2",
-    "whatwg-fetch": "2.0.4"
+    "whatwg-fetch": "3.0.0"
   }
 }
