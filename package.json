@@ -2,12 +2,22 @@
   "name": "@terrestris/base-util",
   "version": "0.1.1",
   "description": "A set of helper classes for working with strings, objects, etc.",
-  "main": "src/index.js",
+  "module": "src/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
+    "clean:dist": "rimraf ./dist/*",
+    "lint": "eslint --ext js src/",
+    "pretest": "npm run lint",
     "test": "jest --silent --maxWorkers=4",
     "test:watch": "jest --watchAll",
     "coveralls": "cat coverage/lcov.info | coveralls",
-    "release": "np --no-yarn"
+    "prepublishOnly": "npm run build:dist",
+    "build:dist": "npm run clean:dist && BABEL_ENV=production babel src --out-dir dist --copy-files --ignore spec.js",
+    "release": "np --no-yarn && git push https://github.com/terrestris/base-util.git master --tags"
   },
   "repository": {
     "type": "git",
@@ -30,19 +40,13 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.1",
-    "babel-jest": "23.4.2",
-    "babel-loader": "8.0.4",
-    "babel-plugin-dynamic-import-node": "2.2.0",
-    "babel-plugin-import": "1.10.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
-    "babel-plugin-transform-import-extension-jsx-to-js": "0.1.0",
-    "babel-polyfill": "6.26.0",
+    "babel-jest": "23.6.0",
     "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "coveralls": "3.0.2",
-    "jest": "23.5.0",
+    "eslint": "5.7.0",
+    "jest": "23.6.0",
     "np": "3.0.4",
-    "whatwg-fetch": "2.0.4"
+    "whatwg-fetch": "3.0.0"
   }
 }
