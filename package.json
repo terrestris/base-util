@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "A set of helper classes for working with strings, objects, etc.",
   "module": "src/index.js",
-  "main": "dist/index.js",
+  "browser": "dist/index.js",
   "files": [
     "src",
     "dist"
