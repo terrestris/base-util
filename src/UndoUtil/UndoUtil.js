@@ -9,7 +9,7 @@ export class UndoUtil {
    * Checks if at least one state is undoable or not.
    *
    * @param {Object} state The global state.
-   * @return {Boolean} Wheather at least one state is undoable or not.
+   * @return {boolean} Wheather at least one state is undoable or not.
    */
   static atLeastOneUndoable(state) {
     for (let [k, v] of Object.entries(state)) {
@@ -24,7 +24,7 @@ export class UndoUtil {
    * Checks if at least one state is redoable or not.
    *
    * @param {Object} state The global state.
-   * @return {Boolean} Wheather at least one state is redoable or not.
+   * @return {boolean} Wheather at least one state is redoable or not.
    */
   static atLeastOneRedoable(state) {
     for (let [k, v] of Object.entries(state)) {

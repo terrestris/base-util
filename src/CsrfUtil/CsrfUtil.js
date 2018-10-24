@@ -18,13 +18,14 @@ import Logger from '../Logger';
 class CsrfUtil {
 
   /**
-   * @static getContentFromMetaTagByName - Description
+   * Finds the meta tag in the current document by the given name and returns
+   * it's content.
    *
    * @param {type} name Description
    *
    * @return {type} Description
    */
-  static getContentFromMetaTagByName (name) {
+  static getContentFromMetaTagByName(name) {
     const compiledSelector = template('meta[name="<%= metaTagName %>"]');
     const element = document.querySelector(compiledSelector({ 'metaTagName': name }));
     let content;
@@ -47,7 +48,7 @@ class CsrfUtil {
    * `_csrf`. The `content` attribute is best filled from Spring by
    * using this variable: `${_csrf.token}`.
    *
-   * @return {String} - the key value, e.g. "741a3b1-221f-4d1d-..." or the
+   * @return {string} - the key value, e.g. "741a3b1-221f-4d1d-..." or the
    *     empty string if the meta tag cannot be found.
    */
   static getCsrfValue() {
@@ -65,7 +66,7 @@ class CsrfUtil {
    * `_csrf_header`. The `content` attribute is best filled from Spring by
    * using this variable: `${_csrf.headerName}`.
    *
-   * @return {String} - the key string, e.g. "X-CSRF-TOKEN" ort the empty
+   * @return {string} - the key string, e.g. "X-CSRF-TOKEN" ort the empty
    *     string if the meta tag cannot be found.
    */
   static getCsrfHeaderName() {
@@ -83,7 +84,7 @@ class CsrfUtil {
    * `_csrf_parameter_name`. The `content` attribute is best filled from
    * Spring by using this variable: `${_csrf.parameterName}`.
    *
-   * @return {String} The name of the parameter to send when sending CSRF
+   * @return {string} The name of the parameter to send when sending CSRF
    *     tokens via forms, e.g. "_csrf" or the empty string if the meta
    *     tag cannot be found.
    */
