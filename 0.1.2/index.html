@@ -1,0 +1,3034 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>@terrestris/base-util 0.1.2 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+  <meta name='description' content='A set of helper classes for working with strings, objects, etc.'>
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>@terrestris/base-util</h3>
+          <div class='mb1'><code>0.1.2</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#csrfutil'
+                  class=" toggle-sibling">
+                  CsrfUtil
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#csrfutilgetcontentfrommetatagbyname'
+                        class='regular pre-open'>
+                        .getContentFromMetaTagByName
+                      </a></li>
+                    
+                      <li><a
+                        href='#csrfutilgetcsrfvalue'
+                        class='regular pre-open'>
+                        .getCsrfValue
+                      </a></li>
+                    
+                      <li><a
+                        href='#csrfutilgetcsrfheadername'
+                        class='regular pre-open'>
+                        .getCsrfHeaderName
+                      </a></li>
+                    
+                      <li><a
+                        href='#csrfutilgetcsrfparametername'
+                        class='regular pre-open'>
+                        .getCsrfParameterName
+                      </a></li>
+                    
+                      <li><a
+                        href='#csrfutilgetheader'
+                        class='regular pre-open'>
+                        .getHeader
+                      </a></li>
+                    
+                      <li><a
+                        href='#csrfutilgetheaderobject'
+                        class='regular pre-open'>
+                        .getHeaderObject
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mathutil'
+                  class=" toggle-sibling">
+                  MathUtil
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#mathutilradtodeg'
+                        class='regular pre-open'>
+                        .radToDeg
+                      </a></li>
+                    
+                      <li><a
+                        href='#mathutildegtorad'
+                        class='regular pre-open'>
+                        .degToRad
+                      </a></li>
+                    
+                      <li><a
+                        href='#mathutilmod'
+                        class='regular pre-open'>
+                        .mod
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#objectutil'
+                  class=" toggle-sibling">
+                  ObjectUtil
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#objectutilgetpathbykeyvalue'
+                        class='regular pre-open'>
+                        .getPathByKeyValue
+                      </a></li>
+                    
+                      <li><a
+                        href='#objectutilgetvalue'
+                        class='regular pre-open'>
+                        .getValue
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#stringutil'
+                  class=" toggle-sibling">
+                  StringUtil
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#stringutilurlify'
+                        class='regular pre-open'>
+                        .urlify
+                      </a></li>
+                    
+                      <li><a
+                        href='#stringutilcoerce'
+                        class='regular pre-open'>
+                        .coerce
+                      </a></li>
+                    
+                      <li><a
+                        href='#stringutilstringdivider'
+                        class='regular pre-open'>
+                        .stringDivider
+                      </a></li>
+                    
+                      <li><a
+                        href='#stringutilstriphtmltags'
+                        class='regular pre-open'>
+                        .stripHTMLTags
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#undoutil'
+                  class=" toggle-sibling">
+                  UndoUtil
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#undoutilatleastoneundoable'
+                        class='regular pre-open'>
+                        .atLeastOneUndoable
+                      </a></li>
+                    
+                      <li><a
+                        href='#undoutilatleastoneredoable'
+                        class='regular pre-open'>
+                        .atLeastOneRedoable
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#urlutil'
+                  class=" toggle-sibling">
+                  UrlUtil
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#urlutilread'
+                        class='regular pre-open'>
+                        .read
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilwrite'
+                        class='regular pre-open'>
+                        .write
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilgetbasepath'
+                        class='regular pre-open'>
+                        .getBasePath
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilgetqueryparams'
+                        class='regular pre-open'>
+                        .getQueryParams
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilgetqueryparam'
+                        class='regular pre-open'>
+                        .getQueryParam
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutiljoinqueryparams'
+                        class='regular pre-open'>
+                        .joinQueryParams
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilhasqueryparam'
+                        class='regular pre-open'>
+                        .hasQueryParam
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilcreatevalidgetcapabilitiesrequest'
+                        class='regular pre-open'>
+                        .createValidGetCapabilitiesRequest
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilbundleogcrequests'
+                        class='regular pre-open'>
+                        .bundleOgcRequests
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilobjecttorequeststring'
+                        class='regular pre-open'>
+                        .objectToRequestString
+                      </a></li>
+                    
+                      <li><a
+                        href='#urlutilisvalid'
+                        class='regular pre-open'>
+                        .isValid
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='csrfutil'>
+      CsrfUtil
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L18-L139'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>CSRF Utility methods.</p>
+<p>Some methods to access the csrf-token information served by spring security.</p>
+<p>The methods herein assume a certain HTML structure, which is easiest achieved
+by including a markup like the following in your base HTML file:</p>
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
+<meta name="_csrf_parameter_name" content="${_csrf.parameterName}" />
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new CsrfUtil()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='csrfutilgetcontentfrommetatagbyname'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getContentFromMetaTagByName(name)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L28-L41'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Finds the meta tag in the current document by the given name and returns
+it's content.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getContentFromMetaTagByName(name: type): type</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(type)</code>
+	    Description
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>type</code>:
+        Description
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='csrfutilgetcsrfvalue'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getCsrfValue()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L54-L57'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the CSRF token value.</p>
+<p>In order for this method to produce reliable output, your base HTML
+page should contain a <code>&#x3C;meta></code>-tag in the <code>&#x3C;head></code> with name
+<code>_csrf</code>. The <code>content</code> attribute is best filled from Spring by
+using this variable: <code>${_csrf.token}</code>.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getCsrfValue(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        the key value, e.g. "741a3b1-221f-4d1d-..." or the
+empty string if the meta tag cannot be found.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='csrfutilgetcsrfheadername'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getCsrfHeaderName()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L72-L75'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the CSRF token key. This can be used if you want to send CSRF
+tokens as header. If you want to send it using a form parameter, use
+the method #getParamName instead.</p>
+<p>In order for this method to produce reliable output, your base HTML
+page should contain a <code>&#x3C;meta></code>-tag in the <code>&#x3C;head></code> with name
+<code>_csrf_header</code>. The <code>content</code> attribute is best filled from Spring by
+using this variable: <code>${_csrf.headerName}</code>.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getCsrfHeaderName(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        the key string, e.g. "X-CSRF-TOKEN" ort the empty
+string if the meta tag cannot be found.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='csrfutilgetcsrfparametername'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getCsrfParameterName()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L91-L94'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the name of the parameter to send when you want to pass CSRF
+tokens via a form. Alternatively you can use #getKey to get the name
+of the header to send for CSRF-protection.</p>
+<p>In order for this method to produce reliable output, your base HTML
+page should contain a <code>&#x3C;meta></code>-tag in the <code>&#x3C;head></code> with name
+<code>_csrf_parameter_name</code>. The <code>content</code> attribute is best filled from
+Spring by using this variable: <code>${_csrf.parameterName}</code>.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getCsrfParameterName(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The name of the parameter to send when sending CSRF
+tokens via forms, e.g. "_csrf" or the empty string if the meta
+tag cannot be found.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='csrfutilgetheader'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getHeader()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L111-L119'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the full CSRF token header object. Can directly be used in fetch, e.g.
+in the following way:</p>
+<p>let csrfHeader = CsrfUtil.getHeader();</p>
+<p>fetch(targetUrl, {
+method: 'POST',
+headers: csrfHeader
+})</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getHeader(): Header</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Header</code>:
+        header - the header containing the CSRF key and
+value or an empty object if any of the required meta fields
+cannot be found.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='csrfutilgetheaderobject'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getHeaderObject()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/CsrfUtil/CsrfUtil.js#L129-L137'>
+      <span>src/CsrfUtil/CsrfUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a simple object containing CSRF header name as key and CSRF value
+as field value</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getHeaderObject(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        Simple object containing the CSRF key and
+value or an empty object if any of the required meta fields
+cannot be found.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mathutil'>
+      MathUtil
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/MathUtil/MathUtil.js#L6-L29'>
+      <span>src/MathUtil/MathUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Helper Class for various calculations.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new MathUtil()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='mathutilradtodeg'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>radToDeg</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/MathUtil/MathUtil.js#L13-L13'>
+      <span>src/MathUtil/MathUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Converts radians to degrees.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>radToDeg</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>rad</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The radian value to convert.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='mathutildegtorad'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>degToRad</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/MathUtil/MathUtil.js#L20-L20'>
+      <span>src/MathUtil/MathUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Converts degrees to radians.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>degToRad</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>deg</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The degree value to convert.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='mathutilmod'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>mod</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/MathUtil/MathUtil.js#L27-L27'>
+      <span>src/MathUtil/MathUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the modulo for (negative) values.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>mod</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>n</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The number.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='objectutil'>
+      ObjectUtil
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/ObjectUtil/ObjectUtil.js#L13-L144'>
+      <span>src/ObjectUtil/ObjectUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This class provides some static methods which might be helpful when working
+with objects.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new ObjectUtil()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='objectutilgetpathbykeyvalue'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getPathByKeyValue(obj, key, value, currentPath)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/ObjectUtil/ObjectUtil.js#L40-L55'>
+      <span>src/ObjectUtil/ObjectUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the dot delimited path of a given object by the given
+key-value pair. Example:</p>
+<pre><code>const obj = {
+  level: 'first',
+  nested: {
+    level: 'second'
+  }
+};
+const key = 'level';
+const value = 'second';
+
+ObjectUtil.getPathByKeyValue(obj, key, value); // 'nested.level'
+</code></pre>
+<p>Note: It will return the first available match!</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getPathByKeyValue(obj: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>), currentPath: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>obj</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The object to obtain the path from.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The key to look for.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>value</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>))</code>
+	    The value to look for.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>currentPath</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;&#39;</code>)</code>
+	    The currentPath (if called in a recursion)
+or the custom root path (default is to '').
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='objectutilgetvalue'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getValue(queryKey, queryObject)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/ObjectUtil/ObjectUtil.js#L74-L143'>
+      <span>src/ObjectUtil/ObjectUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Method may be used to return a value of a given input object by a
+provided query key. The query key can be used in two ways:</p>
+<ul>
+<li>Single-value: Find the first matching key in the provided object
+(Use with caution as the object/array order may not be as
+expected and/or deterministic!).</li>
+<li>Backslash ("/") separated value: Find the last (!) matching key
+in the provided object.</li>
+</ul>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getValue(queryKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, queryObject: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>queryKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The key to be searched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>queryObject</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The object to be searched on
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The target value or 
+<code>undefined</code>
+ if the given couldn't be
+found, or an object if a path was passed, from which we only could
+find a part, but not the most specific one.
+TODO Harmonize return values
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringutil'>
+      StringUtil
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/StringUtil/StringUtil.js#L4-L113'>
+      <span>src/StringUtil/StringUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Helper Class for Strings</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new StringUtil()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='stringutilurlify'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>urlify(text)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/StringUtil/StringUtil.js#L12-L16'>
+      <span>src/StringUtil/StringUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Replaces any occurence of a link-like text with <a> tag.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>urlify(text: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>text</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The string context to replace.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The urlified string.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='stringutilcoerce'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>coerce(string)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/StringUtil/StringUtil.js#L25-L50'>
+      <span>src/StringUtil/StringUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This coerces the value of a string by casting it to the most plausible
+datatype, guessed by the value itself.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>coerce(string: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>string</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The input string to coerce.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The coerced value.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='stringutilstringdivider'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>stringDivider(str, width, spaceReplacer)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/StringUtil/StringUtil.js#L63-L96'>
+      <span>src/StringUtil/StringUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a string that is wrapped: every ~<code>width</code> chars a space is
+replaced with the passed <code>spaceReplacer</code>.</p>
+<p>See <a href="https://stackoverflow.com/questions/14484787/wrap-text-in-javascript">https://stackoverflow.com/questions/14484787/wrap-text-in-javascript</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>stringDivider(str: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, width: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, spaceReplacer: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The string to wrap.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>width</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The width of a line (number of characters).
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>spaceReplacer</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The string to replace spaces with.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The 'wrapped' string.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='stringutilstriphtmltags'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>stripHTMLTags(htmlString)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/StringUtil/StringUtil.js#L104-L112'>
+      <span>src/StringUtil/StringUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the displayed text of an string with html text.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>stripHTMLTags(htmlString: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>htmlString</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    A string containing html.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The stripped Text.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='undoutil'>
+      UndoUtil
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UndoUtil/UndoUtil.js#L6-L38'>
+      <span>src/UndoUtil/UndoUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Helper class for state/undo-redo.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new UndoUtil()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='undoutilatleastoneundoable'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>atLeastOneUndoable(state)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UndoUtil/UndoUtil.js#L14-L21'>
+      <span>src/UndoUtil/UndoUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Checks if at least one state is undoable or not.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>atLeastOneUndoable(state: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>state</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The global state.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Wheather at least one state is undoable or not.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='undoutilatleastoneredoable'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>atLeastOneRedoable(state)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UndoUtil/UndoUtil.js#L29-L36'>
+      <span>src/UndoUtil/UndoUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Checks if at least one state is redoable or not.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>atLeastOneRedoable(state: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>state</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The global state.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Wheather at least one state is redoable or not.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='urlutil'>
+      UrlUtil
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L11-L239'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Helper Class for the URL handling.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new UrlUtil()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='urlutilread'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>read(url)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L19-L21'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns an object representation of an URL.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>read(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/API/URL/URL">URL</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to read in.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/API/URL/URL">URL</a></code>:
+        The parsed URL object.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilwrite'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>write(urlObj)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L29-L31'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a string representation of an URL object.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>write(urlObj: <a href="https://developer.mozilla.org/docs/Web/API/URL/URL">URL</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>urlObj</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/API/URL/URL">URL</a>)</code>
+	    The URL object to write out.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The stringified URL.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilgetbasepath'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getBasePath(url)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L39-L43'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the base path of an URL.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getBasePath(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to obtain the base path from.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The base path.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilgetqueryparams'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getQueryParams(url)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L51-L55'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the query params of a given URL as object.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getQueryParams(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to get the query params from.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        The query params of the given URL.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilgetqueryparam'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getQueryParam(url, key)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L65-L70'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the value of the given query param of the provided URL. If not
+found, undefined will be returned.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getQueryParam(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to get the query params from.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The key to get the value from.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The query param value.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutiljoinqueryparams'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>joinQueryParams(params1, params2, keys)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L91-L102'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Joins some query parameters (defined by <code>keys</code>) of two query objects and
+returns the joined query parameters.</p>
+<pre><code>var params1 = {FOO: 'foo,bar', BAZ: 'baz', HUMPTY: '1'};
+var params2 = {FOO: 'pupe,pape', BAZ: 'baz', DUMPTY: '42'};
+var keys = ['FOO'];
+var joined = this.joinQueryParams(params1, params2, keys);
+// joined is now
+// {FOO: 'foo,bar,pupe,pape', BAZ: 'baz', HUMPTY: '1'};
+</code></pre>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>joinQueryParams(params1: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, params2: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, keys: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>params1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The first object with parameters, where certain
+keys might have values that are joined with 
+<code>,</code>
+.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>params2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The second object with parameters, where certain
+keys might have values that are joined with 
+<code>,</code>
+.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>keys</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    The keys which we will consider for joining. Others
+will be taken from the first object with parameters.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        The joined query parameters.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilhasqueryparam'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>hasQueryParam(url, key)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L111-L115'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Checks if a given URL has the provided query parameter present.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>hasQueryParam(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to check.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The query parameter to check.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Whether the parameter is present or not.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilcreatevalidgetcapabilitiesrequest'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>createValidGetCapabilitiesRequest(url, service, version)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L126-L143'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Creates a valid GetCapabilitiesRequest out of the given URL by checking if
+SERVICE, REQUEST and VERSION are set.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>createValidGetCapabilitiesRequest(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, service: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to validate.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>service</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;WMS&#39;</code>)</code>
+	    The service to set. Default is to 'WMS'.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;1.3.0&#39;</code>)</code>
+	    The version to set. Default is to '1.3.0'.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The validated URL.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilbundleogcrequests'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>bundleOgcRequests(featureInfoUrls, stringify, bundleParams)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L164-L194'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This joins/bundles a given set of (typically WMS GetFeatureInfo) requests
+by the base URL. E.g. it merges the following two requests:</p>
+<p><a href="https://maps.bvb.de?SERVICE=WMS&#x26;REQUEST=GetFeatureInfo&#x26;LAYERS=Shinji">https://maps.bvb.de?SERVICE=WMS&#x26;REQUEST=GetFeatureInfo&#x26;LAYERS=Shinji</a>
+<a href="https://maps.bvb.de?SERVICE=WMS&#x26;REQUEST=GetFeatureInfo&#x26;LAYERS=Kagawa">https://maps.bvb.de?SERVICE=WMS&#x26;REQUEST=GetFeatureInfo&#x26;LAYERS=Kagawa</a></p>
+<p>to</p>
+<p><a href="https://maps.bvb.de?SERVICE=WMS&#x26;REQUEST=GetFeatureInfo&#x26;LAYERS=Shinji,Kagawa">https://maps.bvb.de?SERVICE=WMS&#x26;REQUEST=GetFeatureInfo&#x26;LAYERS=Shinji,Kagawa</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>bundleOgcRequests(featureInfoUrls: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, stringify: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, bundleParams: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>featureInfoUrls</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    An array of requests to bundle.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>stringify</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+	    Whether to stringify the output or not. If set
+to false an object keyed by the base URL and
+valued by the combined requests params will be
+returned.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>bundleParams</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+            = <code>[&#39;LAYERS&#39;,&#39;QUERY_LAYERS&#39;,&#39;STYLES&#39;]</code>)</code>
+	    An array of query params to bundle, default is
+to 
+['LAYERS', 'QUERY_LAYERS', 'STYLES']
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilobjecttorequeststring'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>objectToRequestString(object)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L204-L210'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Transforms an object into a string containing requestParams (without
+leading questionmark).</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>objectToRequestString(object: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>object</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An object containing kvp for the request.
+e.g. {height:400, width:200}
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        The kvps as a requestString. e.g. 'height=400&#x26;width=200'
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urlutilisvalid'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>isValid(url, opts)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/:jansule/base-util/blob/87ae5a9f51adcff9b6ffc14d3655157a680302a8/src/UrlUtil/UrlUtil.js#L220-L237'>
+      <span>src/UrlUtil/UrlUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Checks if a given URL is valid. Implementation based on
+<a href="https://www.npmjs.com/package/validator">https://www.npmjs.com/package/validator</a>.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>isValid(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, opts: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The URL to validate.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{protocols:[&#39;http&#39;,&#39;https&#39;,&#39;ftp&#39;],require_tld:false,require_protocol:true,require_host:true,require_valid_protocol:true,allow_underscores:false,host_whitelist:false,host_blacklist:false,allow_trailing_dot:false,allow_protocol_relative_urls:false}</code>)</code>
+	    The validation 
+<code>validator</code>
+ options.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Whether the URL is valid or not.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
