@@ -104,6 +104,17 @@ describe('StringUtil', () => {
         const result = StringUtil.stripHTMLTags(htmlString);
         expect(result).toBe(got);
       });
+      it('retuns undefined if no DOMParser', () => {
+        // DOMParser is very widely supported, nonetheless this is a public API,
+        // see also https://caniuse.com/#feat=xml-serializer for support in
+        // even ancient browsers
+        let origDOMParser = DOMParser;
+        DOMParser = null; // eslint-disable-line no-global-assign
+        const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> <br>';
+        const result = StringUtil.stripHTMLTags(htmlString);
+        expect(result).toBe(undefined);
+        DOMParser = origDOMParser; // eslint-disable-line no-global-assign
+      });
     });
   });
 
