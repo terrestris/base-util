@@ -95,6 +95,15 @@ describe('StringUtil', () => {
         const expectedString = 'I should be\nsplitted on\nwhitespace';
         expect(outputString).toBe(expectedString);
       });
+
+      it('also uses hyphens for splitting', () => {
+        const inputString = 'abc-def-ghi-jkl-mno-pqr';
+        const width = 5;
+        const spaceReplacer = '\n';
+        const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
+        const expectedString = 'abc-\ndef-\nghi-\njkl-\nmno-\npqr';
+        expect(outputString).toBe(expectedString);
+      });
     });
 
     describe('#stripHTMLTags', () => {
