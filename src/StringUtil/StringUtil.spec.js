@@ -128,6 +128,20 @@ describe('StringUtil', () => {
           // Only relevant in Node v8
         }
       });
+      it('returns the empty string if no text content', () => {
+        const cases = [
+          '',
+          ' ',
+          '\t',
+          '\r',
+          '\n',
+          ' \t\r\n '
+        ];
+        cases.forEach((oneCase) => {
+          let result = StringUtil.stripHTMLTags(oneCase);
+          expect(result).toBe('');
+        });
+      });
     });
   });
 
