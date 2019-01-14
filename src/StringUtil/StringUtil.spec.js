@@ -113,7 +113,11 @@ describe('StringUtil', () => {
         const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> <br>';
         const result = StringUtil.stripHTMLTags(htmlString);
         expect(result).toBe(undefined);
-        DOMParser = origDOMParser; // eslint-disable-line no-global-assign
+        try {
+          DOMParser = origDOMParser; // eslint-disable-line no-global-assign
+        } catch (e) {
+          // Only relevant in Node v8
+        }
       });
     });
   });
