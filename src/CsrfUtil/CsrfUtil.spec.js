@@ -22,8 +22,8 @@ const specs = [{
   content: paramName
 }, {
   tag: 'meta',
-  name: 'manta',
-  content: 'jurgensohn'
+  name: 'mamba',
+  content: 'jojo'
 }];
 
 describe('CsrfUtil', () => {
@@ -158,8 +158,8 @@ describe('CsrfUtil', () => {
     });
 
     it('getContentFromMetaTagByName', () => {
-      let result = CsrfUtil.getContentFromMetaTagByName('manta');
-      expect(result).toBe('jurgensohn');
+      let result = CsrfUtil.getContentFromMetaTagByName('mamba');
+      expect(result).toBe('jojo');
     });
 
     it('getContentFromMetaTagByName should return warning for unknown meta tag', () => {

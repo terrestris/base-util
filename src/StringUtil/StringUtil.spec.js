@@ -113,7 +113,7 @@ describe('StringUtil', () => {
         const result = StringUtil.stripHTMLTags(htmlString);
         expect(result).toBe(got);
       });
-      it('retuns undefined if no DOMParser', () => {
+      it('returns undefined if no DOMParser', () => {
         // DOMParser is very widely supported, nonetheless this is a public API,
         // see also https://caniuse.com/#feat=xml-serializer for support in
         // even ancient browsers
