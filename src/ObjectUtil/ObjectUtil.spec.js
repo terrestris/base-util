@@ -157,6 +157,13 @@ describe('ObjectUtil', () => {
       expect(got).toBe('bar');
     });
 
+    it('returns undefined if key not present in object in array', function() {
+      // MJ: I find this quite confusing, TBH
+      var obj = {ohai: [{foo: 'bar'}]};
+      var got = ObjectUtil.getValue('humpty', obj);
+      expect(got).toBe(undefined);
+    });
+
     it('handles deep arrays and calls itself on contained objects', function() {
       // MJ: I find this quite confusing, TBH
       var obj = {ohai: [1, [2, [3, [{foo: 'bar'}]]]]};

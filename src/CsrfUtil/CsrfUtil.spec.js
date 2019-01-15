@@ -22,8 +22,8 @@ const specs = [{
   content: paramName
 }, {
   tag: 'meta',
-  name: 'manta',
-  content: 'jurgensohn'
+  name: 'mamba',
+  content: 'jojo'
 }];
 
 describe('CsrfUtil', () => {
@@ -66,28 +66,100 @@ describe('CsrfUtil', () => {
       expect(result).toBe(paramName);
     });
 
-    it('getHeader', () => {
-      let result = CsrfUtil.getHeader();
-      expect(result).toBeInstanceOf(Headers);
+    describe('#getHeader', () => {
+      it('works if headers present and set correctly', () => {
+        let result = CsrfUtil.getHeader();
+        expect(result).toBeInstanceOf(Headers);
 
-      expect(result.has(headerName)).toBe(true);
-      expect(result.get(headerName)).toBe(tokenValue);
+        expect(result.has(headerName)).toBe(true);
+        expect(result.get(headerName)).toBe(tokenValue);
+      });
+
+      it('returns empty headers if empty _csrf meta tag', () => {
+        const elem = document.querySelector('meta[name="_csrf"]');
+        const content = elem.content;
+        elem.content = '';
+        const result = CsrfUtil.getHeader();
+        expect(result).toBeInstanceOf(Headers);
+        expect(result.has(headerName)).toBe(false);
+        elem.content = content; // reset
+      });
+
+      it('returns empty headers if empty _csrf_header meta tag', () => {
+        const elem = document.querySelector('meta[name="_csrf_header"]');
+        const content = elem.content;
+        elem.content = '';
+        const result = CsrfUtil.getHeader();
+        expect(result).toBeInstanceOf(Headers);
+        expect(result.has(headerName)).toBe(false);
+        elem.content = content; // reset
+      });
+
+      it('returns empty headers if neither empty _csrf_header nor _csrf', () => {
+        const elem1 = document.querySelector('meta[name="_csrf"]');
+        const elem2 = document.querySelector('meta[name="_csrf_header"]');
+        const content1 = elem1.content;
+        const content2 = elem2.content;
+        elem1.content = '';
+        elem2.content = '';
+        const result = CsrfUtil.getHeader();
+        expect(result).toBeInstanceOf(Headers);
+        expect(result.has(headerName)).toBe(false);
+        elem1.content = content1; // reset
+        elem2.content = content2; // reset
+      });
     });
 
-    it('getHeaderObject', () => {
-      const result = CsrfUtil.getHeaderObject();
-      const csrfHeaderName = CsrfUtil.getCsrfHeaderName();
-      const csrfValue = CsrfUtil.getCsrfValue();
+    describe('getHeaderObject', () => {
+      it('works if headers present and set correctly', () => {
+        const result = CsrfUtil.getHeaderObject();
+        const csrfHeaderName = CsrfUtil.getCsrfHeaderName();
+        const csrfValue = CsrfUtil.getCsrfValue();
 
-      const keysInObject = Object.keys(result).length;
-      expect(keysInObject).toBe(1);
+        const keysInObject = Object.keys(result).length;
+        expect(keysInObject).toBe(1);
 
-      expect(result[csrfHeaderName]).toBe(csrfValue);
+        expect(result[csrfHeaderName]).toBe(csrfValue);
+      });
+
+      it('returns empty object if empty _csrf meta tag', () => {
+        const elem = document.querySelector('meta[name="_csrf"]');
+        const content = elem.content;
+        elem.content = '';
+        const result = CsrfUtil.getHeaderObject();
+        const keysInObject = Object.keys(result).length;
+        expect(keysInObject).toBe(0); // empty!
+        elem.content = content; // reset
+      });
+
+      it('returns empty object if empty _csrf_header meta tag', () => {
+        const elem = document.querySelector('meta[name="_csrf_header"]');
+        const content = elem.content;
+        elem.content = '';
+        const result = CsrfUtil.getHeaderObject();
+        const keysInObject = Object.keys(result).length;
+        expect(keysInObject).toBe(0); // empty!
+        elem.content = content; // reset
+      });
+
+      it('returns empty headers if neither empty _csrf_header nor _csrf', () => {
+        const elem1 = document.querySelector('meta[name="_csrf"]');
+        const elem2 = document.querySelector('meta[name="_csrf_header"]');
+        const content1 = elem1.content;
+        const content2 = elem2.content;
+        elem1.content = '';
+        elem2.content = '';
+        const result = CsrfUtil.getHeaderObject();
+        const keysInObject = Object.keys(result).length;
+        expect(keysInObject).toBe(0); // empty!
+        elem1.content = content1; // reset
+        elem2.content = content2; // reset
+      });
     });
 
     it('getContentFromMetaTagByName', () => {
-      let result = CsrfUtil.getContentFromMetaTagByName('manta');
-      expect(result).toBe('jurgensohn');
+      let result = CsrfUtil.getContentFromMetaTagByName('mamba');
+      expect(result).toBe('jojo');
     });
 
     it('getContentFromMetaTagByName should return warning for unknown meta tag', () => {

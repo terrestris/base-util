@@ -113,7 +113,7 @@ describe('StringUtil', () => {
         const result = StringUtil.stripHTMLTags(htmlString);
         expect(result).toBe(got);
       });
-      it('retuns undefined if no DOMParser', () => {
+      it('returns undefined if no DOMParser', () => {
         // DOMParser is very widely supported, nonetheless this is a public API,
         // see also https://caniuse.com/#feat=xml-serializer for support in
         // even ancient browsers
@@ -127,6 +127,20 @@ describe('StringUtil', () => {
         } catch (e) {
           // Only relevant in Node v8
         }
+      });
+      it('returns the empty string if no text content', () => {
+        const cases = [
+          '',
+          ' ',
+          '\t',
+          '\r',
+          '\n',
+          ' \t\r\n '
+        ];
+        cases.forEach((oneCase) => {
+          let result = StringUtil.stripHTMLTags(oneCase);
+          expect(result).toBe('');
+        });
       });
     });
   });
