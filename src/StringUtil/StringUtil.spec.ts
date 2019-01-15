@@ -74,11 +74,12 @@ describe('StringUtil', () => {
       it ('returns original input string if its length is smaller as provided line width', () => {
         const inputString = 'MyLengthIs12';
         const width = 13;
-        const outputString = StringUtil.stringDivider(inputString, width);
+        const outputString = StringUtil.stringDivider(inputString, width, '-');
         expect(outputString).toEqual(inputString);
       });
 
-      it ('splits hard on the width length and wraps the string into given format if its length is greater as provided line width', () => {
+      it ('splits hard on the width length and wraps the string into given format if its length' +
+          'is greater as provided line width', () => {
         const inputString = 'MyLengthIsGreaterAs20';
         const width = 10;
         const spaceReplacer = '\n';
@@ -87,7 +88,8 @@ describe('StringUtil', () => {
         expect(outputString).toBe(expectedString);
       });
 
-      it ('splits on whitespace and wraps the string into given format if its length is greater as provided line width', () => {
+      it ('splits on whitespace and wraps the string into given format if its length is greater as' +
+          'provided line width', () => {
         const inputString = 'I should be splitted on whitespace';
         const width = 11;
         const spaceReplacer = '\n';
@@ -108,7 +110,8 @@ describe('StringUtil', () => {
 
     describe('#stripHTMLTags', () => {
       it ('returns the text content of an html string', () => {
-        const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> <br>';
+        const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">' +
+          'OpenStreetMap contributors</a> <br>';
         const got = '© OpenStreetMap contributors ';
         const result = StringUtil.stripHTMLTags(htmlString);
         expect(result).toBe(got);
@@ -119,7 +122,8 @@ describe('StringUtil', () => {
         // even ancient browsers
         let origDOMParser = DOMParser;
         DOMParser = null; // eslint-disable-line no-global-assign
-        const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> <br>';
+        const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">' +
+          'OpenStreetMap contributors</a> <br>';
         const result = StringUtil.stripHTMLTags(htmlString);
         expect(result).toBe(undefined);
         try {

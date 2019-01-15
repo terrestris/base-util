@@ -1,7 +1,6 @@
 /*eslint-env jest*/
 
-
-import UndoUtil from './UndoUtil';
+import UndoUtil, { State } from './UndoUtil';
 
 describe('UndoUtil', () => {
 
@@ -17,7 +16,7 @@ describe('UndoUtil', () => {
         expect(UndoUtil.atLeastOneUndoable).toBeDefined();
       });
       it('checks if at least one state is undoable or not.', () => {
-        let state = {
+        let state: State = {
           entry: {
             present: {
               a: 'a',
@@ -45,7 +44,7 @@ describe('UndoUtil', () => {
         expect(UndoUtil.atLeastOneRedoable).toBeDefined();
       });
       it('checks if at least one state is redoable or not.', () => {
-        let state = {
+        let state: State = {
           entry: {
             present: {
               a: 'a',

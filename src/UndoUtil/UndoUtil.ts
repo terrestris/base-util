@@ -1,3 +1,11 @@
+export type State = {
+  [entry: string]: {
+    present: any,
+    past: any[],
+    future: any[]
+  }
+};
+
 /**
  * Helper class for state/undo-redo.
  *
@@ -11,7 +19,7 @@ export class UndoUtil {
    * @param {Object} state The global state.
    * @return {boolean} Wheather at least one state is undoable or not.
    */
-  static atLeastOneUndoable(state) {
+  static atLeastOneUndoable(state: State): boolean {
     for (let [k, v] of Object.entries(state)) {
       if (k && v && v.past && v.past.length > 0) {
         return true;
@@ -26,7 +34,7 @@ export class UndoUtil {
    * @param {Object} state The global state.
    * @return {boolean} Wheather at least one state is redoable or not.
    */
-  static atLeastOneRedoable(state) {
+  static atLeastOneRedoable(state: State) {
     for (let [k, v] of Object.entries(state)) {
       if (k && v && v.future && v.future.length > 0) {
         return true;

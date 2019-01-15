@@ -1,3 +1,5 @@
+import isString from 'lodash/isString.js';
+
 /**
  * Helper Class for Strings
  */
@@ -9,7 +11,7 @@ class StringUtil {
    * @param {string} text The string context to replace.
    * @return {string} The urlified string.
    */
-  static urlify(text) {
+  static urlify(text: string) {
     let urlRegex = /(https?:\/\/[^\s]+)/g;
 
     return text.replace(urlRegex, `<a href="$1" target="_blank">$1</a>`);
@@ -19,33 +21,33 @@ class StringUtil {
    * This coerces the value of a string by casting it to the most plausible
    * datatype, guessed by the value itself.
    *
-   * @param {string} string The input string to coerce.
+   * @param {string} str The input string to coerce.
    * @return {*} The coerced value.
    */
-  static coerce(string) {
-    if (!(string instanceof String || typeof string === 'string')) {
-      return string;
+  static coerce(str: string): any {
+    if (!isString(str)) {
+      return str;
     }
 
     const isFloatRegex = /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/;
 
-    if (string.toLowerCase() === 'true') {
+    if (str.toLowerCase() === 'true') {
       return true;
-    } else if (string.toLowerCase() === 'false') {
+    } else if (str.toLowerCase() === 'false') {
       return false;
-    } else if (isFloatRegex.test(string)) {
-      return parseFloat(string);
-    } else if (string.startsWith('[')) {
-      return JSON.parse(string).map(a => StringUtil.coerce(a));
-    } else if (string.startsWith('{')) {
-      const parsedObj = JSON.parse(string);
+    } else if (isFloatRegex.test(str)) {
+      return parseFloat(str);
+    } else if (str.startsWith('[')) {
+      return JSON.parse(str).map((a: string) => StringUtil.coerce(a));
+    } else if (str.startsWith('{')) {
+      const parsedObj = JSON.parse(str);
       let coercedObj = {};
       Object.keys(parsedObj).forEach(key => {
         coercedObj[key] = StringUtil.coerce(parsedObj[key]);
       });
       return coercedObj;
     } else {
-      return string;
+      return str;
     }
   }
 
@@ -60,7 +62,7 @@ class StringUtil {
    * @param {string} spaceReplacer The string to replace spaces with.
    * @return {string} The 'wrapped' string.
    */
-  static stringDivider(str, width, spaceReplacer) {
+  static stringDivider(str: string, width: number, spaceReplacer: string): string {
 
     let startIndex = 0;
     let stopIndex = width;
@@ -101,7 +103,7 @@ class StringUtil {
    * @param {string} htmlString A string containing html.
    * @return {string} The stripped Text.
    */
-  static stripHTMLTags(htmlString) {
+  static stripHTMLTags(htmlString: string): string {
     let stripped;
     if (DOMParser) {
       // Inspired by https://stackoverflow.com/a/47140708

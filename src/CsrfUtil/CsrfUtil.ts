@@ -25,12 +25,12 @@ class CsrfUtil {
    *
    * @return {type} Description
    */
-  static getContentFromMetaTagByName(name) {
+  static getContentFromMetaTagByName(name: string) {
     const compiledSelector = template('meta[name="<%= metaTagName %>"]');
-    const element = document.querySelector(compiledSelector({ 'metaTagName': name }));
+    const element: Element = document.querySelector(compiledSelector({ 'metaTagName': name }));
     let content;
     if (element) {
-      content = element.content || '';
+      content = element.getAttribute('content') || '';
     } else {
       let warnTpl = template('Failed to find tag <meta name=<%= metaTagName %> />. Is it ' +
           ' present in the page DOM?');
@@ -51,7 +51,7 @@ class CsrfUtil {
    * @return {string} - the key value, e.g. "741a3b1-221f-4d1d-..." or the
    *     empty string if the meta tag cannot be found.
    */
-  static getCsrfValue() {
+  static getCsrfValue(): string {
     const metaName = '_csrf';
     return CsrfUtil.getContentFromMetaTagByName(metaName);
   }
@@ -69,7 +69,7 @@ class CsrfUtil {
    * @return {string} - the key string, e.g. "X-CSRF-TOKEN" ort the empty
    *     string if the meta tag cannot be found.
    */
-  static getCsrfHeaderName() {
+  static getCsrfHeaderName(): string {
     const metaName = '_csrf_header';
     return CsrfUtil.getContentFromMetaTagByName(metaName);
   }
@@ -88,7 +88,7 @@ class CsrfUtil {
    *     tokens via forms, e.g. "_csrf" or the empty string if the meta
    *     tag cannot be found.
    */
-  static getCsrfParameterName() {
+  static getCsrfParameterName(): string {
     const metaName = '_csrf_parameter_name';
     return CsrfUtil.getContentFromMetaTagByName(metaName);
   }
@@ -104,11 +104,11 @@ class CsrfUtil {
    *   headers: csrfHeader
    * })
    *
-   * @return {Header} header - the header containing the CSRF key and
+   * @return {Headers} header - the header containing the CSRF key and
    *     value or an empty object if any of the required meta fields
    *     cannot be found.
    */
-  static getHeader() {
+  static getHeader(): Headers {
     const headerObj = new Headers();
     const csrfValue = CsrfUtil.getCsrfValue();
     const csrfHeaderName = CsrfUtil.getCsrfHeaderName();
@@ -126,7 +126,7 @@ class CsrfUtil {
    *     value or an empty object if any of the required meta fields
    *     cannot be found.
    */
-  static getHeaderObject() {
+  static getHeaderObject(): object {
     const headerObj = {};
     const csrfValue = CsrfUtil.getCsrfValue();
     const csrfHeaderName = CsrfUtil.getCsrfHeaderName();

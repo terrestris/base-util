@@ -1,21 +1,33 @@
-const path = require('path');
 module.exports = {
   moduleFileExtensions: [
-    'js'
+    'js',
+    'ts'
+  ],
+  testMatch: [
+    '<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)',
+    '<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)'
   ],
   moduleDirectories: [
     'node_modules'
   ],
   transformIgnorePatterns: [
-     'node_modules/(?!(ol)/)'
+    'node_modules/(?!(ol)/)'
   ],
-  setupFiles: [
-    '<rootDir>/jest/__mocks__/shim.js',
-    '<rootDir>/jest/setup.js'
-  ],
-  collectCoverage: false,
+  transform: {
+    '^.+\\.jsx?$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.ts?$': 'ts-jest'
+  },
+  setupTestFrameworkScriptFile: '<rootDir>/jest/setup.js',
+  // setupFiles: [
+  //   '<rootDir>/jest/__mocks__/shim.js',
+  //   '<rootDir>/jest/setup.js'
+  // ],
   collectCoverageFrom: [
-    'src/**/*.js'
+    'src/**/*.ts'
   ],
-  coverageDirectory: '<rootDir>/coverage'
+  globals: {
+    'ts-jest': {
+      tsConfig: '<rootDir>/tsconfig.prod.json'
+    }
+  }
 };

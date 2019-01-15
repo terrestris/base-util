@@ -37,7 +37,8 @@ class ObjectUtil {
    * @param {string} [currentPath=''] The currentPath (if called in a recursion)
    *                                  or the custom root path (default is to '').
    */
-  static getPathByKeyValue(obj, key, value, currentPath = '') {
+  static getPathByKeyValue(obj: any, key: string, value: string | number | boolean,
+      currentPath: string = ''): string | undefined {
     currentPath = currentPath ? `${currentPath}.` : currentPath;
 
     for (let k in obj) {
@@ -52,6 +53,8 @@ class ObjectUtil {
         }
       }
     }
+
+    return undefined;
   }
 
   /**
@@ -71,7 +74,7 @@ class ObjectUtil {
    *     find a part, but not the most specific one.
    *     TODO Harmonize return values
    */
-  static getValue(queryKey, queryObject) {
+  static getValue(queryKey: string, queryObject: any): any {
     var queryMatch;
 
     if (!isString(queryKey)) {
@@ -87,9 +90,9 @@ class ObjectUtil {
     // path in the object-hierarchy and will return the last matching
     // value
     if (queryKey.split('/').length > 1) {
-      queryKey.split('/').forEach(function(key) {
-        if (queryObject[key]) {
-          queryObject = queryObject[key];
+      queryKey.split('/').forEach(subKey => {
+        if (queryObject[subKey]) {
+          queryObject = queryObject[subKey];
         } else {
           // if the last entry wasn't found return the last match
           return queryObject;
@@ -101,39 +104,40 @@ class ObjectUtil {
     // iterate over the input object and return the first matching
     // value
     for (var key in queryObject) {
+      if (queryObject.hasOwnProperty(key)) {
+        // get the current value
+        var value = queryObject[key];
 
-      // get the current value
-      var value = queryObject[key];
+        // if the given key is the queryKey, let's return the
+        // corresponding value
+        if (key === queryKey) {
+          return value;
+        }
 
-      // if the given key is the queryKey, let's return the
-      // corresponding value
-      if (key === queryKey) {
-        return value;
-      }
-
-      // TODO MJ: I do not like this too much, see the appropriate test.
-      // I fear we can only reach this if the original key was not a path,
-      // right?
-      //
-      // if the value is an array and the array contains an object as
-      // well, let's call ourself recursively for this object
-      if (isArray(value)) {
-        for (var i = 0; i < value.length; i++) {
-          var val = value[i];
-          if (isObject(val)) {
-            queryMatch = this.getValue(queryKey, val);
-            if (queryMatch) {
-              return queryMatch;
+        // TODO MJ: I do not like this too much, see the appropriate test.
+        // I fear we can only reach this if the original key was not a path,
+        // right?
+        //
+        // if the value is an array and the array contains an object as
+        // well, let's call ourself recursively for this object
+        if (isArray(value)) {
+          for (var i = 0; i < value.length; i++) {
+            var val = value[i];
+            if (isObject(val)) {
+              queryMatch = this.getValue(queryKey, val);
+              if (queryMatch) {
+                return queryMatch;
+              }
             }
           }
         }
-      }
 
-      // if the value is an object, let's call ourself recursively
-      if (isObject(value)) {
-        queryMatch = this.getValue(queryKey, value);
-        if (queryMatch) {
-          return queryMatch;
+        // if the value is an object, let's call ourself recursively
+        if (isObject(value)) {
+          queryMatch = this.getValue(queryKey, value);
+          if (queryMatch) {
+            return queryMatch;
+          }
         }
       }
     }
