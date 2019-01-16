@@ -1,5 +1,4 @@
 /*eslint-env jest*/
-
 import { CsrfUtil } from '.';
 import { MathUtil } from '.';
 import { ObjectUtil } from '.';

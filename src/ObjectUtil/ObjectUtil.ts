@@ -75,7 +75,7 @@ class ObjectUtil {
    *     TODO Harmonize return values
    */
   static getValue(queryKey: string, queryObject: any): any {
-    var queryMatch;
+    let queryMatch;
 
     if (!isString(queryKey)) {
       Logger.error('Missing input parameter queryKey <String>');
@@ -106,7 +106,7 @@ class ObjectUtil {
     for (var key in queryObject) {
       if (queryObject.hasOwnProperty(key)) {
         // get the current value
-        var value = queryObject[key];
+        const value = queryObject[key];
 
         // if the given key is the queryKey, let's return the
         // corresponding value
@@ -122,7 +122,7 @@ class ObjectUtil {
         // well, let's call ourself recursively for this object
         if (isArray(value)) {
           for (var i = 0; i < value.length; i++) {
-            var val = value[i];
+            const val = value[i];
             if (isObject(val)) {
               queryMatch = this.getValue(queryKey, val);
               if (queryMatch) {
