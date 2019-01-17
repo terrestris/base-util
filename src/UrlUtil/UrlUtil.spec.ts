@@ -142,7 +142,8 @@ describe('UrlUtil', () => {
         got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de?VERSION=1.1.0&REQUEST=GetCapabilities');
         expect(got).toEqual('http://borussia.de?REQUEST=GetCapabilities&VERSION=1.1.0&SERVICE=WMS');
 
-        got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de?SERVICE=WMS&REQUEST=GetCapabilities', null, '1.1.0');
+        got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de?SERVICE=WMS&REQUEST=GetCapabilities',
+          null, '1.1.0');
         expect(got).toEqual('http://borussia.de?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.1.0');
 
         got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de', 'WFS', '1.1.0');
@@ -230,7 +231,7 @@ describe('UrlUtil', () => {
           'http://foo@example.com/foo?humpty=dumpty': true,
           'http://foo:s3cretP4ssw0rd@example.com/foo?humpty=dumpty': true
         };
-
+        // @ts-ignore
         for (const [key, value] of Object.entries(urls)) {
           expect(UrlUtil.isValid(key)).toBe(value);
         }

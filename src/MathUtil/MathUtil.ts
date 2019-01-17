@@ -10,21 +10,21 @@ class MathUtil {
    *
    * @param {number} rad The radian value to convert.
    */
-  static radToDeg = rad => rad * 360 / (Math.PI * 2);
+  static radToDeg = (rad: number) => rad * 360 / (Math.PI * 2);
 
   /**
    * Converts degrees to radians.
    *
    * @param {number} deg The degree value to convert.
    */
-  static degToRad = deg => deg * Math.PI * 2 / 360;
+  static degToRad = (deg: number) => deg * Math.PI * 2 / 360;
 
   /**
    * Returns the modulo for (negative) values.
    *
    * @param {number} n The number.
    */
-  static mod = n => ((n % (2 * Math.PI)) + (2 * Math.PI)) % (2 * Math.PI);
+  static mod = (n: number) => ((n % (2 * Math.PI)) + (2 * Math.PI)) % (2 * Math.PI);
 
 }
 

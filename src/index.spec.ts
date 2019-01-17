@@ -1,12 +1,11 @@
 /*eslint-env jest*/
-
-import {CsrfUtil} from '.';
-import {MathUtil} from '.';
-import {ObjectUtil} from '.';
-import {StringUtil} from '.';
-import {UndoUtil} from '.';
-import {UrlUtil} from '.';
-import {Logger} from '.';
+import { CsrfUtil } from '.';
+import { MathUtil } from '.';
+import { ObjectUtil } from '.';
+import { StringUtil } from '.';
+import { UndoUtil } from '.';
+import { UrlUtil } from '.';
+import { Logger } from '.';
 
 describe('main exports', () => {
   it('exports CsrfUtil', () => {

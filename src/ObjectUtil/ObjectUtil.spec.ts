@@ -13,7 +13,7 @@ describe('ObjectUtil', () => {
     });
 
     it('returns the path of an object by the given key-value pair', () => {
-      const obj = {
+      const obj: any = {
         level: 'first',
         firstLevel: true,
         levelNumber: 1,
@@ -70,7 +70,7 @@ describe('ObjectUtil', () => {
   });
 
   describe('getValue', () => {
-    let testObject;
+    let testObject: any;
     beforeEach(function() {
       testObject = {
         firstLevel: true,
@@ -92,8 +92,8 @@ describe('ObjectUtil', () => {
     });
 
     it('returns undefined on unexpected key datatype', function() {
-      var unexpectedKeys = [
-        1, false, true, null, undefined, {}, [], function() {}, NaN, /./g
+      var unexpectedKeys: any[] = [
+        1, false, true, null, undefined, {}, [], function(): undefined {return undefined; }, NaN, /./g
       ];
       // mock up an object that has the string representation of the unexpected
       // keys actually set; an alternative implementation might return
