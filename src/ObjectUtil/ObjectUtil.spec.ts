@@ -103,7 +103,6 @@ describe('ObjectUtil', () => {
         obj[Object.prototype.toString.call(unexpectedKey)] = true;
       });
       unexpectedKeys.forEach(unexpectedKey => {
-        // @ts-ignore
         expect(ObjectUtil.getValue(unexpectedKey, obj)).toBeUndefined();
       });
     });

@@ -233,7 +233,6 @@ describe('UrlUtil', () => {
         };
         // @ts-ignore
         for (const [key, value] of Object.entries(urls)) {
-          console.log(key, UrlUtil.isValid(key));
           expect(UrlUtil.isValid(key)).toBe(value);
         }
       });
