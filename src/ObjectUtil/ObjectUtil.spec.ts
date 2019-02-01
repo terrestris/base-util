@@ -73,7 +73,7 @@ describe('ObjectUtil', () => {
     let testObject: any;
     beforeEach(function() {
       testObject = {
-        firstLevel: true,
+        thirdLevel: false,
         level: 'first',
         firstNested: {
           secondLevel: true,
@@ -126,7 +126,10 @@ describe('ObjectUtil', () => {
       expect(retVal2).toBe('second');
 
       var retVal3 = ObjectUtil.getValue('secondLevel', testObject);
-      expect(retVal3).toBe(true);
+      expect(retVal3).toBeTruthy();
+
+      var retVal4 = ObjectUtil.getValue('thirdLevel', testObject);
+      expect(retVal4).toBeFalsy();
     });
 
     it('returns undefined on valid getValue (non-existing key)', function() {

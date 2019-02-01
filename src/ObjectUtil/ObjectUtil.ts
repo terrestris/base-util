@@ -125,7 +125,7 @@ class ObjectUtil {
             const val = value[i];
             if (isObject(val)) {
               queryMatch = this.getValue(queryKey, val);
-              if (queryMatch) {
+              if (typeof queryMatch !== 'undefined') {
                 return queryMatch;
               }
             }
@@ -135,7 +135,7 @@ class ObjectUtil {
         // if the value is an object, let's call ourself recursively
         if (isObject(value)) {
           queryMatch = this.getValue(queryKey, value);
-          if (queryMatch) {
+          if (typeof queryMatch !== 'undefined') {
             return queryMatch;
           }
         }
