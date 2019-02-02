@@ -17,7 +17,9 @@ module.exports = {
     '^.+\\.jsx?$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.ts?$': 'ts-jest'
   },
-  setupTestFrameworkScriptFile: '<rootDir>/jest/setup.js',
+  setupFilesAfterEnv: [
+    '<rootDir>/jest/setup.js'
+  ],
   // setupFiles: [
   //   '<rootDir>/jest/__mocks__/shim.js',
   //   '<rootDir>/jest/setup.js'
