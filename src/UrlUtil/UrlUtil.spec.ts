@@ -185,6 +185,18 @@ describe('UrlUtil', () => {
         got = UrlUtil.bundleOgcRequests([
           'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Shinji',
           'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Kagawa'
+        ]);
+        expect(got).toEqual({
+          'http://maps.bvb.de': {
+            SERVICE: 'WMS',
+            REQUEST: 'GetFeatureInfo',
+            LAYERS: 'Shinji,Kagawa'
+          }
+        });
+
+        got = UrlUtil.bundleOgcRequests([
+          'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Shinji',
+          'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Kagawa'
         ], false);
         expect(got).toEqual({
           'http://maps.bvb.de': {
@@ -236,6 +248,20 @@ describe('UrlUtil', () => {
           expect(UrlUtil.isValid(key)).toBe(value);
         }
       });
+      it('can be configured', () => {
+        const urls = {
+          'http://foo:s3cretP4ssw0rd@example.com/foo?humpty=dumpty': false
+        };
+        // @ts-ignore
+        for (const [key, value] of Object.entries(urls)) {
+          const got = UrlUtil.isValid(key, {
+            require_tld: false,
+            require_protocol: true,
+            disallow_auth: true
+          });
+          expect(got).toBe(value);
+        }
+      })
     });
   });
 
