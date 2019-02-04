@@ -104,7 +104,7 @@ class StringUtil {
    * @return {string} The stripped Text.
    */
   static stripHTMLTags(htmlString: string): string {
-    let stripped;
+    let stripped = '';
     if (DOMParser) {
       // Inspired by https://stackoverflow.com/a/47140708
       const doc = (new DOMParser()).parseFromString(htmlString, 'text/html');

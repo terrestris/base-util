@@ -27,7 +27,7 @@ class CsrfUtil {
    */
   static getContentFromMetaTagByName(name: string) {
     const compiledSelector = template('meta[name="<%= metaTagName %>"]');
-    const element: Element = document.querySelector(compiledSelector({ 'metaTagName': name }));
+    const element: Element | null = document.querySelector(compiledSelector({ 'metaTagName': name }));
     let content;
     if (element) {
       content = element.getAttribute('content') || '';

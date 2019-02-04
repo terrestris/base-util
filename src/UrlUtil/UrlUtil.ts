@@ -19,7 +19,7 @@ export class UrlUtil {
    * @return {URL} The parsed URL object.
    */
   static read(url: string): URL {
-    return new URL(url, null, QueryString.parse);
+    return new URL(url, undefined, QueryString.parse);
   }
 
   /**
