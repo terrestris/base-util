@@ -4,6 +4,9 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "Promise": false
+  },
   "parser": "babel-eslint",
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
