@@ -34,6 +34,7 @@
     "loglevel": "1.6.1",
     "query-string": "6.2.0",
     "url-parse": "1.4.3",
+    "url-search-params": "1.1.0",
     "validator": "10.8.0"
   },
   "devDependencies": {
