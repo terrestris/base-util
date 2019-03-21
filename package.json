@@ -42,6 +42,7 @@
     "loglevel": "1.6.1",
     "query-string": "5.1.1",
     "url-parse": "1.4.4",
+    "url-search-params": "1.1.0",
     "validator": "10.11.0"
   },
   "devDependencies": {
@@ -54,6 +55,7 @@
     "@types/lodash": "4.14.122",
     "@types/loglevel": "1.5.4",
     "@types/url-parse": "1.4.3",
+    "@types/url-search-params": "1.1.0",
     "@types/validator": "10.9.0",
     "coveralls": "3.0.3",
     "gh-pages": "2.0.1",
