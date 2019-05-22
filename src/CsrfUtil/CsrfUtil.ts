@@ -57,6 +57,22 @@ class CsrfUtil {
   }
 
   /**
+   * Get the CSRF token value from the `XSRF-TOKEN` cookie. Alternative to
+   * the `getCsrfValue` method.
+   *
+   * When using Spring Security, a `CookieCsrfTokenRepository` has to be
+   * configured to persist the CSRF token.
+   *
+   * @return {string} - the key value, e.g. "741a3b1-221f-4d1d-..." or an
+   *     empty string if the `XSRF_TOKEN` cookie cannot be found.
+   */
+  static getCsrfValueFromCookie(): string {
+    const csrfCookie = document.cookie.replace(
+      /(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+    return csrfCookie || '';
+  }
+
+  /**
    * Get the CSRF token key. This can be used if you want to send CSRF
    * tokens as header. If you want to send it using a form parameter, use
    * the method #getParamName instead.
