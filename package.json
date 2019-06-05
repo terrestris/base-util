@@ -57,7 +57,7 @@
     "@types/url-parse": "1.4.3",
     "@types/url-search-params": "1.1.0",
     "@types/validator": "10.11.0",
-    "coveralls": "3.0.3",
+    "coveralls": "3.0.4",
     "gh-pages": "2.0.1",
     "jest": "24.0.0",
     "np": "5.0.2",
