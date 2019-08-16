@@ -187,7 +187,7 @@ export class UrlUtil {
     if (stringify) {
       for (let [baseUrl, queryParams] of Object.entries(featureInfoUrlColl)) {
         let urlObj = UrlUtil.read(baseUrl);
-        urlObj.set('query', queryParams);
+        urlObj.set('query', queryParams as string);
         urls.push(UrlUtil.write(urlObj));
       }
       return urls;
