@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/terrestris/base-util#readme",
   "dependencies": {
-    "@types/lodash": "4.14.136",
+    "@types/lodash": "4.14.137",
     "@types/loglevel": "1.6.3",
     "@types/url-parse": "1.4.3",
     "@types/url-search-params": "1.1.0",
