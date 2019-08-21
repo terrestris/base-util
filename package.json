@@ -42,7 +42,7 @@
     "@types/loglevel": "1.6.3",
     "@types/url-parse": "1.4.3",
     "@types/url-search-params": "1.1.0",
-    "@types/validator": "10.11.2",
+    "@types/validator": "10.11.3",
     "lodash": "4.17.15",
     "loglevel": "1.6.3",
     "query-string": "6.8.2",
