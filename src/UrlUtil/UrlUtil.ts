@@ -2,6 +2,7 @@ import URL from 'url-parse';
 import QueryString from 'query-string';
 import clone from 'lodash/clone.js';
 import isURL from 'validator/lib/isURL';
+import validator from 'validator';
 
 export type Service = 'WMS' | 'WFS' | 'CSW' | 'WCS' | 'WPS' | 'WTS' | 'WCTS';
 
@@ -220,7 +221,7 @@ export class UrlUtil {
    * @param {Object} opts The validation `validator` options.
    * @return {boolean} Whether the URL is valid or not.
    */
-  static isValid(url: string, opts: ValidatorJS.IsURLOptions = {
+  static isValid(url: string, opts: validator.IsURLOptions = {
     require_tld: false,
     require_protocol: true
   }) {
