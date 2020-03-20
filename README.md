@@ -1,6 +1,6 @@
 # base-util
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/terrestris/base-util.svg)](https://greenkeeper.io/)
+[![Dependabot badge](https://api.dependabot.com/badges/status?host=github&repo=terrestris/base-util)](https://dependabot.com/)
 [![Build Status](https://travis-ci.org/terrestris/base-util.svg?branch=master)](https://travis-ci.org/terrestris/base-util)
 [![Coverage Status](https://coveralls.io/repos/github/terrestris/base-util/badge.svg?branch=master)](https://coveralls.io/github/terrestris/base-util?branch=master)
 
