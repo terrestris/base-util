@@ -112,6 +112,17 @@ class StringUtil {
     }
     return stripped;
   }
+
+  /**
+   * Removes duplicated forward slashes as well as trailing slash
+   * and returns normalized URL string.
+   *
+   * @param {string} url Original URL string.
+   * @return {string} Sanitized URL string.
+   */
+  static sanitizeUrl(url: string): string {
+    return url.replace(/([^:]\/)\/+/g, '$1').replace(/\/+$/, '');
+  }
 }
 
 export default StringUtil;
