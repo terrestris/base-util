@@ -71,32 +71,32 @@ describe('StringUtil', () => {
     });
 
     describe('#stringDivider', () => {
-      it ('returns original input string if its length is smaller as provided line width', () => {
+      it('returns original input string if its length is smaller as provided line width', () => {
         const inputString = 'MyLengthIs12';
         const width = 13;
         const outputString = StringUtil.stringDivider(inputString, width, '-');
         expect(outputString).toEqual(inputString);
       });
 
-      it ('splits hard on the width length and wraps the string into given format if its length' +
-          'is greater as provided line width', () => {
-        const inputString = 'MyLengthIsGreaterAs20';
-        const width = 10;
-        const spaceReplacer = '\n';
-        const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-        const expectedString = 'MyLengthIsG-\nreaterAs20';
-        expect(outputString).toBe(expectedString);
-      });
+      it('splits hard on the width length and wraps the string into given format if its length' +
+        'is greater as provided line width', () => {
+          const inputString = 'MyLengthIsGreaterAs20';
+          const width = 10;
+          const spaceReplacer = '\n';
+          const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
+          const expectedString = 'MyLengthIsG-\nreaterAs20';
+          expect(outputString).toBe(expectedString);
+        });
 
-      it ('splits on whitespace and wraps the string into given format if its length is greater as' +
-          'provided line width', () => {
-        const inputString = 'I should be splitted on whitespace';
-        const width = 11;
-        const spaceReplacer = '\n';
-        const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-        const expectedString = 'I should be\nsplitted on\nwhitespace';
-        expect(outputString).toBe(expectedString);
-      });
+      it('splits on whitespace and wraps the string into given format if its length is greater as' +
+        'provided line width', () => {
+          const inputString = 'I should be splitted on whitespace';
+          const width = 11;
+          const spaceReplacer = '\n';
+          const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
+          const expectedString = 'I should be\nsplitted on\nwhitespace';
+          expect(outputString).toBe(expectedString);
+        });
 
       it('also uses hyphens for splitting', () => {
         const inputString = 'abc-def-ghi-jkl-mno-pqr';
@@ -109,7 +109,7 @@ describe('StringUtil', () => {
     });
 
     describe('#stripHTMLTags', () => {
-      it ('returns the text content of an html string', () => {
+      it('returns the text content of an html string', () => {
         const htmlString = '&copy; <a href="https://www.openstreetmap.org/copyright">' +
           'OpenStreetMap contributors</a> <br>';
         const got = '© OpenStreetMap contributors ';
@@ -144,6 +144,35 @@ describe('StringUtil', () => {
         cases.forEach((oneCase) => {
           let result = StringUtil.stripHTMLTags(oneCase);
           expect(result).toBe('');
+        });
+      });
+
+      describe('#sanitizeUrl', () => {
+        it('removes doubled forward slashes from URL string', () => {
+          const wrongUrl1 = 'https://test.de/part1//part2///part3////part4';
+          const wrongUrl2 = 'https:///test.de/part1/part2/part3/part4';
+          const wrongUrl3 = 'https:////test.de/part1//part2///part3/part4';
+          const sanitizedUrl = 'https://test.de/part1/part2/part3/part4';
+          [
+            wrongUrl1,
+            wrongUrl2,
+            wrongUrl3
+          ].forEach(testUrl => expect(StringUtil.sanitizeUrl(testUrl)).toEqual(sanitizedUrl));
+        });
+        it('removes trailins slash(es) from URL string', () => {
+          const wrongUrl1 = 'https://test.de/part1/part2/';
+          const wrongUrl2 = 'https://test.de/part1/part2//';
+          const wrongUrl3 = 'https:///test.de//part1/part2///';
+          const sanitizedUrl = 'https://test.de/part1/part2';
+          [
+            wrongUrl1,
+            wrongUrl2,
+            wrongUrl3
+          ].forEach(testUrl => expect(StringUtil.sanitizeUrl(testUrl)).toEqual(sanitizedUrl));
+        });
+        it('returns the original URL string if no correction is needed', () => {
+          const goodUrl = 'https://test.de/i/am/a/good/one';
+          expect(StringUtil.sanitizeUrl(goodUrl)).toEqual(goodUrl);
         });
       });
     });
