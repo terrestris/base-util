@@ -240,7 +240,7 @@ describe('UrlUtil', () => {
           'http://ows.terrestris.de?param1=key1&param2=key2': true,
           'http://10.133.7.9': true,
           'bvb://ows.terrestris.de': false,
-          'http://foo@example.com/foo?humpty=dumpty': true,
+          'http://foo:@example.com/foo?humpty=dumpty': true,
           'http://foo:s3cretP4ssw0rd@example.com/foo?humpty=dumpty': true
         };
         // @ts-ignore

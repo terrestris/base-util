@@ -223,7 +223,14 @@ export class UrlUtil {
    */
   static isValid(url: string, opts: validator.IsURLOptions = {
     require_tld: false,
-    require_protocol: true
+    require_protocol: true,
+    protocols: ['http', 'https', 'ftp'],
+    require_host: true,
+    require_valid_protocol: true,
+    allow_underscores: false,
+    allow_trailing_dot: false,
+    allow_protocol_relative_urls: false,
+    disallow_auth: false
   }) {
     return isURL(url, opts);
   }
