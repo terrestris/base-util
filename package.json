@@ -20,7 +20,7 @@
     "test:ci": "jest --ci --coverage",
     "test:watch": "jest --watchAll",
     "build": "npm run test:ci && npm run build:dist && npm run build:docs",
-    "build:docs": "npm run clean:docs && typedoc --out ./build/docs/ --exclude **/*.spec.**",
+    "build:docs": "npm run clean:docs && typedoc --out ./build/docs/ --exclude **/*.spec.** src/index.ts",
     "build:dist": "tsc -p ./tsconfig.prod.json",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "prepublishOnly": "npm run build:dist",
