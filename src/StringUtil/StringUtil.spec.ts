@@ -12,7 +12,7 @@ describe('StringUtil', () => {
 
   describe('Static methods', () => {
     describe('#urlify', () => {
-      it('wraps any occurence of a link with an <a> tag', () => {
+      it('wraps any occurrence of a link with an <a> tag', () => {
         let url = 'http://www.bvb.de';
         let text = `Visit ${url}`;
         let got = StringUtil.urlify(text);
@@ -90,11 +90,11 @@ describe('StringUtil', () => {
 
       it('splits on whitespace and wraps the string into given format if its length is greater as' +
         'provided line width', () => {
-          const inputString = 'I should be splitted on whitespace';
+          const inputString = 'I should be split on whitespace';
           const width = 11;
           const spaceReplacer = '\n';
           const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-          const expectedString = 'I should be\nsplitted on\nwhitespace';
+          const expectedString = 'I should be\nsplit on\nwhitespace';
           expect(outputString).toBe(expectedString);
         });
 
