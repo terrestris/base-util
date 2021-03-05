@@ -6,7 +6,7 @@ import isString from 'lodash/isString.js';
 class StringUtil {
 
   /**
-   * Replaces any occurence of a link-like text with <a> tag.
+   * Replaces any occurrence of a link-like text with an `<a>`-tag.
    *
    * @param {string} text The string context to replace.
    * @return {string} The urlified string.
