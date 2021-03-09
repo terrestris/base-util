@@ -4,7 +4,7 @@ import clone from 'lodash/clone.js';
 import isURL from 'validator/lib/isURL';
 import validator from 'validator';
 
-export type Service = 'WMS' | 'WFS' | 'CSW' | 'WCS' | 'WPS' | 'WTS' | 'WCTS';
+export type Service = 'WMS' | 'WFS' | 'CSW' | 'WCS' | 'WPS' | 'WTS' | 'WCTS' | 'WMTS';
 
 /**
  * Helper Class for the URL handling.
