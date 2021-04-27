@@ -30,7 +30,7 @@ describe('UrlUtil', () => {
       it('stringifies a given URL object', () => {
         let exp = new URL('http://borussia.de?bvb=true');
         let got = UrlUtil.write(exp);
-        expect(got).toBe('http://borussia.de?bvb=true');
+        expect(got).toBe('http://borussia.de/?bvb=true'); // Note the slash
       });
     });
 
@@ -46,7 +46,7 @@ describe('UrlUtil', () => {
         expect(got).toBe('https://borussia.de/bvb');
 
         got = UrlUtil.getBasePath('https://borussia.de?bvb=09');
-        expect(got).toBe('https://borussia.de');
+        expect(got).toBe('https://borussia.de/');
       });
     });
 
@@ -131,7 +131,7 @@ describe('UrlUtil', () => {
         expect(UrlUtil.createValidGetCapabilitiesRequest).toBeDefined();
       });
       it('returns a valid GetCapabilities request', () => {
-        const validUrl = 'http://borussia.de?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0';
+        const validUrl = 'http://borussia.de/?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0';
 
         let got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de');
         expect(got).toEqual(validUrl);
@@ -140,14 +140,14 @@ describe('UrlUtil', () => {
         expect(got).toEqual(validUrl);
 
         got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de?VERSION=1.1.0&REQUEST=GetCapabilities');
-        expect(got).toEqual('http://borussia.de?REQUEST=GetCapabilities&VERSION=1.1.0&SERVICE=WMS');
+        expect(got).toEqual('http://borussia.de/?REQUEST=GetCapabilities&VERSION=1.1.0&SERVICE=WMS');
 
         got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de?SERVICE=WMS&REQUEST=GetCapabilities',
           null, '1.1.0');
-        expect(got).toEqual('http://borussia.de?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.1.0');
+        expect(got).toEqual('http://borussia.de/?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.1.0');
 
         got = UrlUtil.createValidGetCapabilitiesRequest('http://borussia.de', 'WFS', '1.1.0');
-        expect(got).toEqual('http://borussia.de?SERVICE=WFS&REQUEST=GetCapabilities&VERSION=1.1.0');
+        expect(got).toEqual('http://borussia.de/?SERVICE=WFS&REQUEST=GetCapabilities&VERSION=1.1.0');
       });
     });
 
@@ -160,7 +160,7 @@ describe('UrlUtil', () => {
           'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Shinji',
           'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Kagawa'
         ], true);
-        expect(got).toEqual(['http://maps.bvb.de?LAYERS=Shinji%2CKagawa&REQUEST=GetFeatureInfo&SERVICE=WMS']);
+        expect(got).toEqual(['http://maps.bvb.de/?LAYERS=Shinji%2CKagawa&REQUEST=GetFeatureInfo&SERVICE=WMS']);
 
         got = UrlUtil.bundleOgcRequests([
           'http://maps.bvb.de?LAYERS=Shinji&REQUEST=GetFeatureInfo&SERVICE=WMS',
@@ -168,8 +168,8 @@ describe('UrlUtil', () => {
           'https://maps.bvb.de?LAYERS=Kagawa&REQUEST=GetFeatureInfo&SERVICE=WMS'
         ], true);
         expect(got).toEqual([
-          'http://maps.bvb.de?LAYERS=Shinji%2CKagawa&REQUEST=GetFeatureInfo&SERVICE=WMS',
-          'https://maps.bvb.de?LAYERS=Kagawa&REQUEST=GetFeatureInfo&SERVICE=WMS'
+          'http://maps.bvb.de/?LAYERS=Shinji%2CKagawa&REQUEST=GetFeatureInfo&SERVICE=WMS',
+          'https://maps.bvb.de/?LAYERS=Kagawa&REQUEST=GetFeatureInfo&SERVICE=WMS'
         ]);
 
         got = UrlUtil.bundleOgcRequests([
@@ -178,8 +178,8 @@ describe('UrlUtil', () => {
           'https://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Kagawa'
         ], true, ['PETER']);
         expect(got).toEqual([
-          'http://maps.bvb.de?LAYERS=Shinji&REQUEST=GetFeatureInfo&SERVICE=WMS',
-          'https://maps.bvb.de?LAYERS=Kagawa&REQUEST=GetFeatureInfo&SERVICE=WMS'
+          'http://maps.bvb.de/?LAYERS=Shinji&REQUEST=GetFeatureInfo&SERVICE=WMS',
+          'https://maps.bvb.de/?LAYERS=Kagawa&REQUEST=GetFeatureInfo&SERVICE=WMS'
         ]);
 
         got = UrlUtil.bundleOgcRequests([
@@ -187,7 +187,7 @@ describe('UrlUtil', () => {
           'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Kagawa'
         ]);
         expect(got).toEqual({
-          'http://maps.bvb.de': {
+          'http://maps.bvb.de/': {
             SERVICE: 'WMS',
             REQUEST: 'GetFeatureInfo',
             LAYERS: 'Shinji,Kagawa'
@@ -199,7 +199,7 @@ describe('UrlUtil', () => {
           'http://maps.bvb.de?SERVICE=WMS&REQUEST=GetFeatureInfo&LAYERS=Kagawa'
         ], false);
         expect(got).toEqual({
-          'http://maps.bvb.de': {
+          'http://maps.bvb.de/': {
             SERVICE: 'WMS',
             REQUEST: 'GetFeatureInfo',
             LAYERS: 'Shinji,Kagawa'
