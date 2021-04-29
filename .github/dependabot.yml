@@ -1,0 +1,31 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: typedoc
+    versions:
+    - 0.20.20
+    - 0.20.23
+    - 0.20.24
+    - 0.20.25
+    - 0.20.33
+    - 0.20.34
+    - 0.20.35
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.12.13
+    - 7.12.16
+  - dependency-name: typescript
+    versions:
+    - 4.1.4
+  - dependency-name: np
+    versions:
+    - 7.3.0
+  - dependency-name: ts-jest
+    versions:
+    - 26.5.0
