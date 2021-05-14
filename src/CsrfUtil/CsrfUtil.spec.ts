@@ -25,6 +25,18 @@ const specs = [{
   content: 'jojo'
 }];
 
+const setCsrfCookie = () => {
+  const date = new Date();
+  date.setTime(date.getTime() + (24*60*60*1000));
+  let expires = '; expires=' + date.toUTCString();
+  document.cookie = csrfCookieName + '=' + (tokenValue || '')  + expires + '; path=/';
+};
+
+const removeCsrfCookie = () => {
+  document.cookie = csrfCookieName + '=; Max-Age=-99999999;';
+};
+
+
 describe('CsrfUtil', () => {
   it('is defined', () => {
     expect(CsrfUtil).not.toBeUndefined();
@@ -32,13 +44,7 @@ describe('CsrfUtil', () => {
 
   describe('Static methods', () => {
     beforeEach(() => {
-      // set csrf cookie
-      let expires = '';
-      const date = new Date();
-      date.setTime(date.getTime() + (24*60*60*1000));
-      expires = '; expires=' + date.toUTCString();
-      document.cookie = csrfCookieName + '=' + (tokenValue || '')  + expires + '; path=/';
-
+      setCsrfCookie();
       // add custom CSRF headers
       specs.forEach((spec) => {
         let tagElement = document.createElement(spec.tag);
@@ -49,8 +55,7 @@ describe('CsrfUtil', () => {
     });
 
     afterEach(() => {
-      // remove cookie
-      document.cookie = csrfCookieName + '=; Max-Age=-99999999;';
+      removeCsrfCookie();
       // remove custom CSRF headers
       specs.forEach((spec) => {
         let compiledSelector = template('meta[name="<%= metaTagName %>"]');
@@ -67,6 +72,12 @@ describe('CsrfUtil', () => {
     it('getCsrfValueFromCookie', () => {
       let result = CsrfUtil.getCsrfValueFromCookie();
       expect(result).toBe(tokenValue);
+    });
+
+    it('getCsrfValueFromCookie (if not found)', () => {
+      removeCsrfCookie();
+      let result = CsrfUtil.getCsrfValueFromCookie();
+      expect(result).toBe('');
     });
 
     it('getCsrfHeaderName', () => {
