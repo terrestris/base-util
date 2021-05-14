@@ -1,5 +1,3 @@
-/*eslint-env jest*/
-
 import URL from 'url-parse';
 
 import UrlUtil from './UrlUtil';
@@ -254,14 +252,16 @@ describe('UrlUtil', () => {
         };
         // @ts-ignore
         for (const [key, value] of Object.entries(urls)) {
+          /* eslint-disable camelcase */
           const got = UrlUtil.isValid(key, {
             require_tld: false,
             require_protocol: true,
             disallow_auth: true
           });
+          /* eslint-enable camelcase */
           expect(got).toBe(value);
         }
-      })
+      });
     });
   });
 

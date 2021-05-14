@@ -1,5 +1,3 @@
-/*eslint-env jest*/
-
 import template from 'lodash/template';
 
 import CsrfUtil from './CsrfUtil';
@@ -35,11 +33,11 @@ describe('CsrfUtil', () => {
   describe('Static methods', () => {
     beforeEach(() => {
       // set csrf cookie
-      let expires = "";
+      let expires = '';
       const date = new Date();
       date.setTime(date.getTime() + (24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-      document.cookie = csrfCookieName + "=" + (tokenValue || "")  + expires + "; path=/";
+      expires = '; expires=' + date.toUTCString();
+      document.cookie = csrfCookieName + '=' + (tokenValue || '')  + expires + '; path=/';
 
       // add custom CSRF headers
       specs.forEach((spec) => {

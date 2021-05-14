@@ -165,7 +165,7 @@ export class UrlUtil {
    *                             to ['LAYERS', 'QUERY_LAYERS', 'STYLES'].
    */
   static bundleOgcRequests(featureInfoUrls: string[], stringify: boolean = false,
-      bundleParams: string[] = ['LAYERS', 'QUERY_LAYERS', 'STYLES']) {
+    bundleParams: string[] = ['LAYERS', 'QUERY_LAYERS', 'STYLES']) {
     let featureInfoUrlColl = {};
 
     featureInfoUrls.forEach((featureInfoUrl) => {
@@ -222,6 +222,7 @@ export class UrlUtil {
    * @return {boolean} Whether the URL is valid or not.
    */
   static isValid(url: string, opts: validator.IsURLOptions = {
+    /* eslint-disable camelcase */
     require_tld: false,
     require_protocol: true,
     protocols: ['http', 'https', 'ftp'],
@@ -231,6 +232,7 @@ export class UrlUtil {
     allow_trailing_dot: false,
     allow_protocol_relative_urls: false,
     disallow_auth: false
+    /* eslint-enable camelcase */
   }) {
     return isURL(url, opts);
   }

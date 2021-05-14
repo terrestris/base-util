@@ -1,5 +1,3 @@
-/*eslint-env jest*/
-
 import UndoUtil, { State } from './UndoUtil';
 
 describe('UndoUtil', () => {
