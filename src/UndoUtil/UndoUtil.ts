@@ -1,9 +1,9 @@
 export type State = {
   [entry: string]: {
-    present: any,
-    past: any[],
-    future: any[]
-  }
+    present: any;
+    past: any[];
+    future: any[];
+  };
 };
 
 /**

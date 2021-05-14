@@ -1,5 +1,3 @@
-/*eslint-env jest*/
-
 import StringUtil from './StringUtil';
 
 describe('StringUtil', () => {
@@ -80,23 +78,23 @@ describe('StringUtil', () => {
 
       it('splits hard on the width length and wraps the string into given format if its length' +
         'is greater as provided line width', () => {
-          const inputString = 'MyLengthIsGreaterAs20';
-          const width = 10;
-          const spaceReplacer = '\n';
-          const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-          const expectedString = 'MyLengthIsG-\nreaterAs20';
-          expect(outputString).toBe(expectedString);
-        });
+        const inputString = 'MyLengthIsGreaterAs20';
+        const width = 10;
+        const spaceReplacer = '\n';
+        const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
+        const expectedString = 'MyLengthIsG-\nreaterAs20';
+        expect(outputString).toBe(expectedString);
+      });
 
       it('splits on whitespace and wraps the string into given format if its length is greater as' +
         'provided line width', () => {
-          const inputString = 'I should be split on whitespace';
-          const width = 11;
-          const spaceReplacer = '\n';
-          const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-          const expectedString = 'I should be\nsplit on\nwhitespace';
-          expect(outputString).toBe(expectedString);
-        });
+        const inputString = 'I should be split on whitespace';
+        const width = 11;
+        const spaceReplacer = '\n';
+        const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
+        const expectedString = 'I should be\nsplit on\nwhitespace';
+        expect(outputString).toBe(expectedString);
+      });
 
       it('also uses hyphens for splitting', () => {
         const inputString = 'abc-def-ghi-jkl-mno-pqr';

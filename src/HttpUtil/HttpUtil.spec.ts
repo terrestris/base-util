@@ -1,4 +1,3 @@
-/*eslint-env jest*/
 import { enableFetchMocks } from 'jest-fetch-mock';
 enableFetchMocks();
 

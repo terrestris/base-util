@@ -4,12 +4,12 @@ import CsrfUtil from '../CsrfUtil/CsrfUtil';
 import Logger from '../Logger';
 
 type PostOptions = {
-  url: string,
-  params?: object,
-  additionalHeaders?: object,
-  additionalFetchOptions?: object,
-  sameOriginCredentials?: boolean,
-  asForm?: boolean
+  url: string;
+  params?: object;
+  additionalHeaders?: object;
+  additionalFetchOptions?: object;
+  sameOriginCredentials?: boolean;
+  asForm?: boolean;
 };
 
 /**

@@ -1,5 +1,3 @@
-/*eslint-env jest*/
-
 import ObjectUtil from './ObjectUtil';
 
 describe('ObjectUtil', () => {

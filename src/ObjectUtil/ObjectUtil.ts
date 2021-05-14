@@ -38,7 +38,7 @@ class ObjectUtil {
    *                                  or the custom root path (default is to '').
    */
   static getPathByKeyValue(obj: any, key: string, value: string | number | boolean,
-      currentPath: string = ''): string | undefined {
+    currentPath: string = ''): string | undefined {
     currentPath = currentPath ? `${currentPath}.` : currentPath;
 
     for (let k in obj) {
