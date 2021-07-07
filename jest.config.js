@@ -7,6 +7,7 @@ module.exports = {
     '<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)',
     '<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)'
   ],
+  testEnvironment: 'jsdom',
   moduleDirectories: [
     'node_modules'
   ],
@@ -20,10 +21,6 @@ module.exports = {
   setupFilesAfterEnv: [
     '<rootDir>/jest/setup.js'
   ],
-  // setupFiles: [
-  //   '<rootDir>/jest/__mocks__/shim.js',
-  //   '<rootDir>/jest/setup.js'
-  // ],
   collectCoverageFrom: [
     'src/**/*.ts'
   ],

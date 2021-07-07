@@ -1,7 +1,6 @@
 module.exports = {
   'presets': [
-    '@babel/env',
-    '@babel/react'
+    '@babel/env'
   ],
   'plugins': [
     '@babel/plugin-proposal-function-bind',
