@@ -10,6 +10,10 @@
     "src",
     "dist"
   ],
+  "engines": {
+    "node": ">=14",
+    "npm": ">=7"
+  },
   "scripts": {
     "clean:dist": "rimraf ./dist/*",
     "clean:docs": "rimraf build/docs",
