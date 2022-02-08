@@ -19,7 +19,7 @@ export class UrlUtil {
    * @param {string} url The URL to read in.
    * @return {URL} The parsed URL object.
    */
-  static read(url: string): URL {
+  static read(url: string): URL<any> {
     return new URL(url, null, QueryString.parse);
   }
 
@@ -29,7 +29,7 @@ export class UrlUtil {
    * @param {URL} urlObj The URL object to write out.
    * @return {string} The stringified URL.
    */
-  static write(urlObj: URL): string {
+  static write(urlObj: URL<any>): string {
     return urlObj.toString();
   }
 
