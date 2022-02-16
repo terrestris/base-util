@@ -1,4 +1,4 @@
-import URLSearchParams from 'url-search-params';
+import URLSearchParams from '@ungap/url-search-params';
 
 import CsrfUtil from '../CsrfUtil/CsrfUtil';
 import Logger from '../Logger';
