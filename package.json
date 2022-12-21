@@ -49,7 +49,7 @@
     "@ungap/url-search-params": "^0.2.2",
     "lodash": "^4.17.21",
     "loglevel": "^1.8.0",
-    "query-string": "^7.1.1",
+    "query-string": "^8.1.0",
     "url-parse": "^1.5.10",
     "validator": "^13.7.0"
   },
