@@ -1,7 +1,8 @@
 # base-util
 
-[![Dependabot badge](https://api.dependabot.com/badges/status?host=github&repo=terrestris/base-util)](https://dependabot.com/)
-[![Build Status](https://travis-ci.org/terrestris/base-util.svg?branch=master)](https://travis-ci.org/terrestris/base-util)
+[![npm version](https://img.shields.io/npm/v/@terrestris/base-util.svg?style=flat-square)](https://www.npmjs.com/package/@terrestris/base-util)
+[![GitHub license](https://img.shields.io/github/license/terrestris/base-util?style=flat-square)](https://github.com/terrestris/base-util/blob/master/LICENSE)
+[![CI](https://github.com/terrestris/base-util/actions/workflows/on-push-master.yml/badge.svg)](https://github.com/terrestris/base-util/actions/workflows/on-push-master.yml)
 [![Coverage Status](https://coveralls.io/repos/github/terrestris/base-util/badge.svg?branch=master)](https://coveralls.io/github/terrestris/base-util?branch=master)
 
 A set of helper classes for working with strings, objects, etc.
