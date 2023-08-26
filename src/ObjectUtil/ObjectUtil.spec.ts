@@ -96,7 +96,7 @@ describe('ObjectUtil', () => {
       // mock up an object that has the string representation of the unexpected
       // keys actually set; an alternative implementation might return
       // `true` instead
-      var obj = {};
+      var obj: { [key: string]: any } = {};
       unexpectedKeys.forEach(unexpectedKey => {
         obj[Object.prototype.toString.call(unexpectedKey)] = true;
       });
@@ -112,7 +112,7 @@ describe('ObjectUtil', () => {
       // we do *not* skip for [], new String('') etc.
       // See: https://lodash.com/docs/#isObject
       unexpectedObjs.forEach(unexpectedObj => {
-        expect(ObjectUtil.getValue('', unexpectedObj)).toBeUndefined();
+        expect(ObjectUtil.getValue('', unexpectedObj as any)).toBeUndefined();
       });
     });
 

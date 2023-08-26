@@ -5,8 +5,8 @@ import Logger from '../Logger';
 
 type PostOptions = {
   url: string;
-  params?: object;
-  additionalHeaders?: object;
+  params?: { [key: string]: string };
+  additionalHeaders?: { [key: string]: string };
   additionalFetchOptions?: object;
   sameOriginCredentials?: boolean;
   asForm?: boolean;

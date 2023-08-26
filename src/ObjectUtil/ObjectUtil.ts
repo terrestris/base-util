@@ -74,7 +74,7 @@ class ObjectUtil {
    *     find a part, but not the most specific one.
    *     TODO Harmonize return values
    */
-  static getValue(queryKey: string, queryObject: any): any {
+  static getValue(queryKey: string, queryObject: { [key: string]: any }): any {
     let queryMatch;
 
     if (!isString(queryKey)) {
