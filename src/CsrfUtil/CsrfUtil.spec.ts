@@ -59,7 +59,7 @@ describe('CsrfUtil', () => {
       // remove custom CSRF headers
       specs.forEach((spec) => {
         let compiledSelector = template('meta[name="<%= metaTagName %>"]');
-        let element = document.querySelector(compiledSelector({ 'metaTagName': spec.name }));
+        let element = document.querySelector(compiledSelector({ metaTagName: spec.name }));
         element.parentNode.removeChild(element);
       });
     });
