@@ -93,9 +93,6 @@ class ObjectUtil {
       queryKey.split('/').forEach(subKey => {
         if (queryObject[subKey]) {
           queryObject = queryObject[subKey];
-        } else {
-          // if the last entry wasn't found return the last match
-          return queryObject;
         }
       });
       return queryObject;
