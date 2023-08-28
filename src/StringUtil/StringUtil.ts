@@ -41,7 +41,7 @@ class StringUtil {
       return JSON.parse(str).map((a: string) => StringUtil.coerce(a));
     } else if (str.startsWith('{')) {
       const parsedObj = JSON.parse(str);
-      let coercedObj = {};
+      let coercedObj: { [key: string]: any } = {};
       Object.keys(parsedObj).forEach(key => {
         coercedObj[key] = StringUtil.coerce(parsedObj[key]);
       });

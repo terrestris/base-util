@@ -166,7 +166,7 @@ export class UrlUtil {
    */
   static bundleOgcRequests(featureInfoUrls: string[], stringify: boolean = false,
     bundleParams: string[] = ['LAYERS', 'QUERY_LAYERS', 'STYLES']) {
-    let featureInfoUrlColl = {};
+    let featureInfoUrlColl: { [key: string]: any } = {};
 
     featureInfoUrls.forEach((featureInfoUrl) => {
       let featureInfoQueryParams = UrlUtil.getQueryParams(featureInfoUrl);

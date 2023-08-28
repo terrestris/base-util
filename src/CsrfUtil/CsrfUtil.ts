@@ -142,8 +142,8 @@ class CsrfUtil {
    *     value or an empty object if any of the required meta fields
    *     cannot be found.
    */
-  static getHeaderObject(): object {
-    const headerObj = {};
+  static getHeaderObject(): { [key: string]: string } {
+    const headerObj: { [key: string]: string } = {};
     const csrfValue = CsrfUtil.getCsrfValue();
     const csrfHeaderName = CsrfUtil.getCsrfHeaderName();
     if (csrfValue !== '' && csrfHeaderName !== '') {

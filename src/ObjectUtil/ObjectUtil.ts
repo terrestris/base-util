@@ -74,7 +74,7 @@ class ObjectUtil {
    *     find a part, but not the most specific one.
    *     TODO Harmonize return values
    */
-  static getValue(queryKey: string, queryObject: any): any {
+  static getValue(queryKey: string, queryObject: { [key: string]: any }): any {
     let queryMatch;
 
     if (!isString(queryKey)) {
@@ -93,9 +93,6 @@ class ObjectUtil {
       queryKey.split('/').forEach(subKey => {
         if (queryObject[subKey]) {
           queryObject = queryObject[subKey];
-        } else {
-          // if the last entry wasn't found return the last match
-          return queryObject;
         }
       });
       return queryObject;
