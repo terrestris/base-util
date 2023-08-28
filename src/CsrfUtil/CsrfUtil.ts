@@ -27,14 +27,14 @@ class CsrfUtil {
    */
   static getContentFromMetaTagByName(name: string) {
     const compiledSelector = template('meta[name="<%= metaTagName %>"]');
-    const element: Element = document.querySelector(compiledSelector({ 'metaTagName': name }));
+    const element: Element = document.querySelector(compiledSelector({ metaTagName: name }));
     let content;
     if (element) {
       content = element.getAttribute('content') || '';
     } else {
       let warnTpl = template('Failed to find tag <meta name=<%= metaTagName %> />. Is it ' +
           ' present in the page DOM?');
-      Logger.warn(warnTpl({ 'metaTagName': name }));
+      Logger.warn(warnTpl({ metaTagName: name }));
       content = '';
     }
     return content;
