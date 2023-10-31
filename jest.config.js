@@ -12,21 +12,20 @@ module.exports = {
     'node_modules'
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(ol)/)'
+    'node_modules/(?!(ol|query-string|decode-uri-component|split-on-first|filter-obj)/)'
   ],
   transform: {
     '^.+\\.jsx?$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.ts?$': 'ts-jest'
+    '^.+\\.ts?$': [
+      'ts-jest', {
+        tsconfig: '<rootDir>/tsconfig.prod.json'
+      }
+    ]
   },
   setupFilesAfterEnv: [
     '<rootDir>/jest/setup.js'
   ],
   collectCoverageFrom: [
     'src/**/*.ts'
-  ],
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.prod.json'
-    }
-  }
+  ]
 };
