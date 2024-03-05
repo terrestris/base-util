@@ -1,8 +1,7 @@
 import URL from 'url-parse';
 import QueryString from 'query-string';
 import clone from 'lodash/clone.js';
-import isURL from 'validator/lib/isURL';
-import validator from 'validator';
+import { isURL } from 'validator';
 
 export type Service = 'WMS' | 'WFS' | 'CSW' | 'WCS' | 'WPS' | 'WTS' | 'WCTS' | 'WMTS';
 
@@ -206,11 +205,9 @@ export class UrlUtil {
    * @return {string} The kvps as a requestString. e.g. 'height=400&width=200'
    */
   static objectToRequestString(object: any) {
-    const requestString = Object.keys(object).map((key: string) => {
+    return Object.keys(object).map((key: string) => {
       return encodeURIComponent(key) + '=' + encodeURIComponent(object[key]);
     }).join('&');
-
-    return requestString;
   }
 
   /**
