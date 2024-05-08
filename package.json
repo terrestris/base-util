@@ -1,6 +1,6 @@
 {
   "name": "@terrestris/base-util",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A set of helper classes for working with strings, objects, etc.",
   "module": "src/index.ts",
   "main": "dist/index.js",
