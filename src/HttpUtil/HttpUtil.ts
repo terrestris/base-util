@@ -70,7 +70,7 @@ class HttpUtil {
     const options = {
       method: 'POST',
       credentials: reqCredentials,
-      body: asForm ? formParams : JSON.stringify(params),
+      body: asForm ? formParams as BodyInit : JSON.stringify(params),
       headers,
       ...additionalFetchOptions
     };

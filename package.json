@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "browser": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "files": [
     "src",
     "dist"
@@ -22,13 +23,13 @@
     "clean:docs": "rimraf build/docs",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "deploy": "NODE_DEBUG=gh-pages node tasks/update-gh-pages.js",
-    "lint": "eslint -c .eslintrc.js --ext ts,tsx src/",
+    "lint": "eslint -c .eslintrc.cjs --ext ts,tsx src/",
     "prepublishOnly": "npm run build:dist",
     "pretest": "npm run lint && npm run typecheck",
     "release": "np --no-yarn && git push https://github.com/terrestris/base-util.git master --tags && npm run build:docs && npm run deploy",
-    "test": "jest",
+    "test": "jest -c jest.config.cjs",
     "test:ci": "npm run test -- --ci --coverage",
-    "test:watch": "jest --watchAll",
+    "test:watch": "jest --watchAll -c jest.config.cjs",
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "repository": {
@@ -58,6 +59,7 @@
     "@types/jest": "^29.5.7",
     "@types/lodash": "^4.14.186",
     "@types/node": "^20.5.6",
+    "@types/ungap__url-search-params": "^0.1.2",
     "@types/url-parse": "^1.4.8",
     "@types/url-search-params": "^1.1.0",
     "@types/validator": "^13.11.9",
