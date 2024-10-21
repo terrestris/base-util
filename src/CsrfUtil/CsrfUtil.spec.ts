@@ -1,3 +1,4 @@
+// @ts-ignore
 import template from 'lodash/template';
 
 import CsrfUtil from './CsrfUtil';

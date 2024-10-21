@@ -1,7 +1,9 @@
+import has from 'lodash/has.js';
+import isArray from 'lodash/isArray.js';
 import isObject from 'lodash/isObject.js';
 import isPlainObject from 'lodash/isPlainObject.js';
 import isString from 'lodash/isString.js';
-import isArray from 'lodash/isArray.js';
+
 import Logger from '../Logger';
 
 /**
@@ -38,18 +40,16 @@ class ObjectUtil {
    *                                  or the custom root path (default is to '').
    */
   static getPathByKeyValue(obj: any, key: string, value: string | number | boolean,
-    currentPath: string = ''): string | undefined {
+    currentPath = ''): string | undefined {
     currentPath = currentPath ? `${currentPath}.` : currentPath;
 
-    for (let k in obj) {
+    for (const k in obj) {
       if (k === key && obj[k] === value) {
         return `${currentPath}${k}`;
       } else if (isPlainObject(obj[k])) {
         const path = ObjectUtil.getPathByKeyValue(obj[k], key, value, `${currentPath}${k}`);
         if (path) {
           return path;
-        } else {
-          continue;
         }
       }
     }
@@ -74,7 +74,7 @@ class ObjectUtil {
    *     find a part, but not the most specific one.
    *     TODO Harmonize return values
    */
-  static getValue(queryKey: string, queryObject: { [key: string]: any }): any {
+  static getValue(queryKey: string, queryObject: Record<string, any>): any {
     let queryMatch;
 
     if (!isString(queryKey)) {
@@ -100,8 +100,8 @@ class ObjectUtil {
 
     // iterate over the input object and return the first matching
     // value
-    for (var key in queryObject) {
-      if (queryObject.hasOwnProperty(key)) {
+    for (const key in queryObject) {
+      if (has(queryObject, key)) {
         // get the current value
         const value = queryObject[key];
 
@@ -118,8 +118,7 @@ class ObjectUtil {
         // if the value is an array and the array contains an object as
         // well, let's call ourself recursively for this object
         if (isArray(value)) {
-          for (var i = 0; i < value.length; i++) {
-            const val = value[i];
+          for (const val of value) {
             if (isObject(val)) {
               queryMatch = this.getValue(queryKey, val);
               if (typeof queryMatch !== 'undefined') {
