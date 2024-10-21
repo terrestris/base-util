@@ -12,8 +12,7 @@ class StringUtil {
    * @return {string} The urlified string.
    */
   static urlify(text: string) {
-    let urlRegex = /(https?:\/\/[^\s]+)/g;
-
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
   }
 
@@ -41,7 +40,7 @@ class StringUtil {
       return JSON.parse(str).map((a: string) => StringUtil.coerce(a));
     } else if (str.startsWith('{')) {
       const parsedObj = JSON.parse(str);
-      let coercedObj: { [key: string]: any } = {};
+      const coercedObj: Record<string, string> = {};
       Object.keys(parsedObj).forEach(key => {
         coercedObj[key] = StringUtil.coerce(parsedObj[key]);
       });

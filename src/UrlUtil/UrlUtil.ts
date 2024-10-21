@@ -1,6 +1,6 @@
-import URL from 'url-parse';
-import QueryString from 'query-string';
 import clone from 'lodash/clone.js';
+import QueryString from 'query-string';
+import URL from 'url-parse';
 import { isURL } from 'validator';
 
 export type Service = 'WMS' | 'WFS' | 'CSW' | 'WCS' | 'WPS' | 'WTS' | 'WCTS' | 'WMTS';
@@ -39,7 +39,7 @@ export class UrlUtil {
    * @return {string} The base path.
    */
   static getBasePath(url: string) {
-    let urlObj = UrlUtil.read(url);
+    const urlObj = UrlUtil.read(url);
 
     return `${urlObj.protocol}//${urlObj.host}${urlObj.pathname}`;
   }
@@ -51,7 +51,7 @@ export class UrlUtil {
    * @return {Object} The query params of the given URL.
    */
   static getQueryParams(url: string) {
-    let urlObj = UrlUtil.read(url);
+    const urlObj = UrlUtil.read(url);
 
     return urlObj.query;
   }
@@ -91,8 +91,8 @@ export class UrlUtil {
    * @return {Object} The joined query parameters.
    */
   static joinQueryParams(params1: any, params2: any, keys: string[]): any {
-    let joined = clone(params1);
-    let comma = ',';
+    const joined = clone(params1);
+    const comma = ',';
 
     keys.forEach((key: string) => {
       if (joined[key]) {
@@ -125,7 +125,7 @@ export class UrlUtil {
    * @param {string} version The version to set. Default is to '1.3.0'.
    * @return {string} The validated URL.
    */
-  static createValidGetCapabilitiesRequest(url: string , service: Service = 'WMS', version: string = '1.3.0') {
+  static createValidGetCapabilitiesRequest(url: string , service: Service = 'WMS', version = '1.3.0') {
     const baseUrl = UrlUtil.getBasePath(url);
     const queryParamsObject = UrlUtil.getQueryParams(url);
 
@@ -163,19 +163,19 @@ export class UrlUtil {
    * @param {Array} bundleParams An array of query params to bundle, default is
    *                             to ['LAYERS', 'QUERY_LAYERS', 'STYLES'].
    */
-  static bundleOgcRequests(featureInfoUrls: string[], stringify: boolean = false,
+  static bundleOgcRequests(featureInfoUrls: string[], stringify = false,
     bundleParams: string[] = ['LAYERS', 'QUERY_LAYERS', 'STYLES']) {
-    let featureInfoUrlColl: { [key: string]: any } = {};
+    const featureInfoUrlColl: Record<string, any> = {};
 
     featureInfoUrls.forEach((featureInfoUrl) => {
-      let featureInfoQueryParams = UrlUtil.getQueryParams(featureInfoUrl);
-      let featureInfoBaseUrl = UrlUtil.getBasePath(featureInfoUrl);
+      const featureInfoQueryParams = UrlUtil.getQueryParams(featureInfoUrl);
+      const featureInfoBaseUrl = UrlUtil.getBasePath(featureInfoUrl);
 
       if (!featureInfoUrlColl[featureInfoBaseUrl]) {
         featureInfoUrlColl[featureInfoBaseUrl] = featureInfoQueryParams;
       } else {
-        var existingQueryParams = featureInfoUrlColl[featureInfoBaseUrl];
-        var newQueryParams = featureInfoQueryParams;
+        const existingQueryParams = featureInfoUrlColl[featureInfoBaseUrl];
+        const newQueryParams = featureInfoQueryParams;
 
         featureInfoUrlColl[featureInfoBaseUrl] = UrlUtil.joinQueryParams(
           existingQueryParams, newQueryParams, bundleParams
@@ -183,10 +183,10 @@ export class UrlUtil {
       }
     });
 
-    let urls = [];
+    const urls = [];
     if (stringify) {
-      for (let [baseUrl, queryParams] of Object.entries(featureInfoUrlColl)) {
-        let urlObj = UrlUtil.read(baseUrl);
+      for (const [baseUrl, queryParams] of Object.entries(featureInfoUrlColl)) {
+        const urlObj = UrlUtil.read(baseUrl);
         urlObj.set('query', queryParams as string);
         urls.push(UrlUtil.write(urlObj));
       }

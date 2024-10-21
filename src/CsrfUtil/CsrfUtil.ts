@@ -1,4 +1,5 @@
 import template from 'lodash/template.js';
+
 import Logger from '../Logger';
 
 /**
@@ -32,7 +33,7 @@ class CsrfUtil {
     if (element) {
       content = element.getAttribute('content') || '';
     } else {
-      let warnTpl = template('Failed to find tag <meta name=<%= metaTagName %> />. Is it ' +
+      const warnTpl = template('Failed to find tag <meta name=<%= metaTagName %> />. Is it ' +
           ' present in the page DOM?');
       Logger.warn(warnTpl({ metaTagName: name }));
       content = '';
@@ -68,7 +69,7 @@ class CsrfUtil {
    */
   static getCsrfValueFromCookie(): string {
     const csrfCookie = document.cookie.replace(
-      /(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+      /(?:(?:^|.*;\s*)XSRF-TOKEN\s*=\s*([^;]*).*$)|^.*$/, '$1');
     return csrfCookie || '';
   }
 
@@ -142,8 +143,8 @@ class CsrfUtil {
    *     value or an empty object if any of the required meta fields
    *     cannot be found.
    */
-  static getHeaderObject(): { [key: string]: string } {
-    const headerObj: { [key: string]: string } = {};
+  static getHeaderObject(): Record<string, string> {
+    const headerObj: Record<string, string> = {};
     const csrfValue = CsrfUtil.getCsrfValue();
     const csrfHeaderName = CsrfUtil.getCsrfHeaderName();
     if (csrfValue !== '' && csrfHeaderName !== '') {

@@ -1,10 +1,8 @@
-export type State = {
-  [entry: string]: {
-    present: any;
-    past: any[];
-    future: any[];
-  };
-};
+export type State = Record<string, {
+  present: any;
+  past: any[];
+  future: any[];
+}>;
 
 /**
  * Helper class for state/undo-redo.
@@ -20,7 +18,7 @@ export class UndoUtil {
    * @return {boolean} Whether at least one state is undoable or not.
    */
   static atLeastOneUndoable(state: State): boolean {
-    for (let [k, v] of Object.entries(state)) {
+    for (const [k, v] of Object.entries(state)) {
       if (k && v && v.past && v.past.length > 0) {
         return true;
       }
@@ -35,7 +33,7 @@ export class UndoUtil {
    * @return {boolean} Whether at least one state is redoable or not.
    */
   static atLeastOneRedoable(state: State) {
-    for (let [k, v] of Object.entries(state)) {
+    for (const [k, v] of Object.entries(state)) {
       if (k && v && v.future && v.future.length > 0) {
         return true;
       }

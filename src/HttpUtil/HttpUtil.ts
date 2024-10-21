@@ -3,14 +3,14 @@ import URLSearchParams from '@ungap/url-search-params';
 import CsrfUtil from '../CsrfUtil/CsrfUtil';
 import Logger from '../Logger';
 
-type PostOptions = {
+interface PostOptions {
   url: string;
-  params?: { [key: string]: string };
-  additionalHeaders?: { [key: string]: string };
+  params?: Record<string, string>;
+  additionalHeaders?: Record<string, string>;
   additionalFetchOptions?: object;
   sameOriginCredentials?: boolean;
   asForm?: boolean;
-};
+}
 
 /**
  * A Helper class which simplifies some complex request setups as like fetch
@@ -45,7 +45,7 @@ class HttpUtil {
     sameOriginCredentials = true,
     asForm = true
   }: PostOptions): Promise<any> {
-    let headers = CsrfUtil.getHeader();
+    const headers = CsrfUtil.getHeader();
 
     if (asForm) {
       headers.set('Content-Type', 'application/x-www-form-urlencoded');
