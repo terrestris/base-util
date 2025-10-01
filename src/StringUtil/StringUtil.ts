@@ -62,18 +62,18 @@ class StringUtil {
    * @return {string} The 'wrapped' string.
    */
   static stringDivider(str: string, width: number, spaceReplacer: string): string {
-
-    let startIndex = 0;
-    let stopIndex = width;
-
     if (str.length > width) {
       let p = width;
       let left;
       let right;
+
+      // we start right *after* the last character that could appear in a line and go to the left
+      // and check if there is whitespace or - somewhere
       while (p > 0 && (str[p] !== ' ' && str[p] !== '-')) {
         p--;
       }
       if (p > 0) {
+        // split on whitespace or -
         if (str.substring(p, p + 1) === '-') {
           left = str.substring(0, p + 1);
         } else {
@@ -85,10 +85,8 @@ class StringUtil {
       } else {
         // no whitespace or - found,
         // splitting hard on the width length
-        left = str.substring(startIndex, stopIndex + 1) + '-';
-        right = str.substring(stopIndex + 1);
-        startIndex = stopIndex;
-        stopIndex += width;
+        left = str.substring(0, width) + '-';
+        right = str.substring(width);
         return left + spaceReplacer + StringUtil.stringDivider(
           right, width, spaceReplacer);
       }
