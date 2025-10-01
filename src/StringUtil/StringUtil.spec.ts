@@ -77,16 +77,16 @@ describe('StringUtil', () => {
       });
 
       it('splits hard on the width length and wraps the string into given format if its length' +
-        'is greater then the provided line width', () => {
-        const inputString = 'MyLengthIsGreaterThen20';
+        'is greater than the provided line width', () => {
+        const inputString = 'MyLengthIsGreaterThan20';
         const width = 10;
         const spaceReplacer = '\n';
         const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-        const expectedString = 'MyLengthIs-\nGreaterThe-\nn20';
+        const expectedString = 'MyLengthIs-\nGreaterTha-\nn20';
         expect(outputString).toBe(expectedString);
       });
 
-      it('splits on whitespace and wraps the string into given format if its length is greater then' +
+      it('splits on whitespace and wraps the string into given format if its length is greater than' +
         'the provided line width', () => {
         const inputString = 'I should be split on whitespace';
         const width = 11;
