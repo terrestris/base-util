@@ -1,4 +1,4 @@
-name: Test successful build of base-util
+name: Run tests and test successful build of base-util
 
 on: pull_request
 
@@ -25,7 +25,7 @@ jobs:
           ${{ runner.OS }}-
 
     - name: Install dependencies ⏬
-      run: npm install
+      run: npm ci
 
     - name: Build artifacts 🏗️
-      run: npm run build
+      run: npm run build # This runs the tests as well

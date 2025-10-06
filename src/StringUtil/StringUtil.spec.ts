@@ -77,17 +77,17 @@ describe('StringUtil', () => {
       });
 
       it('splits hard on the width length and wraps the string into given format if its length' +
-        'is greater as provided line width', () => {
-        const inputString = 'MyLengthIsGreaterAs20';
+        'is greater than the provided line width', () => {
+        const inputString = 'MyLengthIsGreaterThan20';
         const width = 10;
         const spaceReplacer = '\n';
         const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
-        const expectedString = 'MyLengthIsG-\nreaterAs20';
+        const expectedString = 'MyLengthIs-\nGreaterTha-\nn20';
         expect(outputString).toBe(expectedString);
       });
 
-      it('splits on whitespace and wraps the string into given format if its length is greater as' +
-        'provided line width', () => {
+      it('splits on whitespace and wraps the string into given format if its length is greater than' +
+        'the provided line width', () => {
         const inputString = 'I should be split on whitespace';
         const width = 11;
         const spaceReplacer = '\n';
@@ -102,6 +102,15 @@ describe('StringUtil', () => {
         const spaceReplacer = '\n';
         const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
         const expectedString = 'abc-\ndef-\nghi-\njkl-\nmno-\npqr';
+        expect(outputString).toBe(expectedString);
+      });
+
+      it('splits before whitespace if needed', () => {
+        const inputString = 'abcdef ghijkl mnopqr';
+        const width = 5;
+        const spaceReplacer = '\n';
+        const outputString = StringUtil.stringDivider(inputString, width, spaceReplacer);
+        const expectedString = 'abcde-\nf\nghijk-\nl\nmnopq-\nr';
         expect(outputString).toBe(expectedString);
       });
     });
