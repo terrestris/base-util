@@ -22,7 +22,7 @@
     "clean:dist": "rimraf ./dist/*",
     "clean:docs": "rimraf build/docs",
     "coveralls": "cat coverage/lcov.info | coveralls",
-    "deploy": "NODE_DEBUG=gh-pages node tasks/update-gh-pages.js",
+    "deploy": "NODE_DEBUG=gh-pages node tasks/update-gh-pages.cjs",
     "lint": "eslint -c eslint.config.mjs src/**",
     "prepublishOnly": "npm run build:dist",
     "pretest": "npm run lint && npm run typecheck",
