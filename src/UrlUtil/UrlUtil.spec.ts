@@ -263,6 +263,27 @@ describe('UrlUtil', () => {
         }
       });
     });
+
+    describe('#harmonizeParameterCase', () => {
+      it('is defined', () => {
+        expect(UrlUtil.harmonizeParameterCase).toBeDefined();
+      });
+      it('returns the query params in the defined case', () => {
+        let got = UrlUtil.harmonizeParameterCase({Version: '1.3.0', Request: 'GetCapabilities', Service: 'WMS'}, 'upper', ['version', 'request', 'service']);
+        expect(got).toEqual({
+          VERSION: '1.3.0',
+          REQUEST: 'GetCapabilities',
+          SERVICE: 'WMS'
+        });
+
+        got = UrlUtil.harmonizeParameterCase({Version: '1.3.0', Request: 'GetCapabilities', Service: 'WMS'}, 'lower', ['version', 'request', 'service']);
+        expect(got).toEqual({
+          version: '1.3.0',
+          request: 'GetCapabilities',
+          service: 'WMS'
+        });
+      });
+    });
   });
 
 });
