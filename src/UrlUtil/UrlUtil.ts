@@ -141,7 +141,10 @@ export class UrlUtil {
       queryParamsObject.VERSION = version;
     }
 
-    return `${baseUrl}?${UrlUtil.objectToRequestString(queryParamsObject)}`;
+    const harmonizedQueryParamsObject = UrlUtil.harmonizeParameterCase(
+      queryParamsObject, 'upper', ['service', 'request', 'version']);
+
+    return `${baseUrl}?${UrlUtil.objectToRequestString(harmonizedQueryParamsObject)}`;
   }
 
   /**
@@ -232,6 +235,25 @@ export class UrlUtil {
     /* eslint-enable camelcase */
   }) {
     return isURL(url, opts);
+  }
+
+  /**
+   * Harmonize the case of all input parameters to upper or lower case
+   * @param  queryParamsObject The given query parameters as object
+   * @param {'upper' | 'lower'} casing The case the params should get
+   * @param {string[]} params The request paramters which should get the correct case
+   * @returns {string} The harmonized query parameters with the wanted case
+   */
+  static harmonizeParameterCase(queryParamsObject: any, casing: 'upper'|'lower' = 'upper', params: string[]) {
+    Object.entries(queryParamsObject).forEach(([key, value]) => {
+      const paramFound = params.some(p => p.toLocaleLowerCase() === key.toLocaleLowerCase());
+      if (paramFound) {
+        delete queryParamsObject[key];
+        queryParamsObject[casing === 'upper' ? key.toLocaleUpperCase() : key.toLocaleLowerCase()] = value;
+      }
+    });
+
+    return queryParamsObject;
   }
 
 }
