@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/terrestris/base-util/compare/v4.0.1...v4.0.2) (2026-03-06)
+
+
+### Bug Fixes
+
+* update README ([f37434b](https://github.com/terrestris/base-util/commit/f37434ba0fb9cf79ef6a1ede6b22fe714468201c))
+
 ## [4.0.1](https://github.com/terrestris/base-util/compare/v4.0.0...v4.0.1) (2026-03-06)
 
 
