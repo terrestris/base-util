@@ -9,6 +9,8 @@ A set of helper classes for working with strings, objects, etc.
 
 ## Installation
 
+To install:
+
 ```javascript static
 npm i @terrestris/base-util
 ```
