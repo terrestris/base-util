@@ -59,7 +59,7 @@
     "@semantic-release/changelog": "7.0.0",
     "@semantic-release/git": "11.0.1",
     "@stylistic/eslint-plugin": "2.13.0",
-    "@terrestris/eslint-config-typescript": "7.0.0",
+    "@terrestris/eslint-config-typescript": "10.0.0",
     "@types/jest": "30.0.0",
     "@types/lodash": "4.17.25",
     "@types/node": "25.9.5",
