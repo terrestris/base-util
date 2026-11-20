@@ -78,7 +78,7 @@
     "jest-environment-jsdom": "30.5.2",
     "jest-fetch-mock": "4.2.0",
     "rimraf": "6.1.4",
-    "semantic-release": "25.0.9",
+    "semantic-release": "26.0.1",
     "ts-jest": "29.4.15",
     "typedoc": "0.28.20",
     "typescript": "5.9.3",
